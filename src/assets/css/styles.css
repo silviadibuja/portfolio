@@ -149,7 +149,7 @@ button:focus {
 
 /* Posiciones de las secciones */
 .s1 {
-  top: calc(0- 70px);
+  top: calc(0vh - 70px);
   left: 0;
 }
 
