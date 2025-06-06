@@ -12,7 +12,7 @@
   --color-primary-600: hsl(47, 96%, 41%);
 
   /* Variables Secondary (grises azules) */
-  --color-secondary-50:  hsl(180, 20%, 98%);
+  --color-secondary-50: hsl(180, 20%, 98%);
   --color-secondary-100: hsl(180, 14%, 93%);
   --color-secondary-200: hsl(180, 14%, 85%);
   --color-secondary-300: hsl(180, 14%, 75%);
@@ -23,7 +23,7 @@
   --border-radius: 8px;
   --border-radius-sm: 4px;
   --transition-default: 0.3s ease;
-  --box-shadow-soft: 0 2px 8px rgba(0,0,0,0.05);
+  --box-shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.05);
   --font-sans: system-ui, sans-serif;
 }
 
@@ -50,8 +50,9 @@ body {
   box-shadow: var(--box-shadow-soft);
   transition: box-shadow var(--transition-default);
 }
+
 .project:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .project h3 {
@@ -141,30 +142,44 @@ button:focus {
   overflow: hidden;
   user-select: none;
   font-weight: 600;
-  text-shadow: 0 0 5px rgba(0,0,0,0.3);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   border-radius: var(--border-radius);
   transition: background 0.5s ease;
 }
 
 /* Posiciones de las secciones */
-.s1 { top: 0; left: 0; }
-.s2 { top: 100vh; left: 0; }
-.s3 { top: 100vh; left: 100vw; }
-.s4 { top: 200vh; left: 100vw; }
+.s1 {
+  top: 0;
+  left: 0;
+}
+
+.s2 {
+  top: 100vh;
+  left: 0;
+}
+
+.s3 {
+  top: 100vh;
+  left: 100vw;
+}
+
+.s4 {
+  top: 200vh;
+  left: 100vw;
+}
 
 /* Gradientes profesionales con overlays */
 
 /* PRIMARY (amarillo) */
-.s1, .s3 {
-  background: linear-gradient(
-    135deg,
-    var(--color-primary-100) 0%,
-    var(--color-primary-200) 20%,
-    var(--color-primary-300) 40%,
-    var(--color-primary-400) 60%,
-    var(--color-primary-500) 80%,
-    var(--color-primary-600) 100%
-  );
+.s1,
+.s3 {
+  background: linear-gradient(135deg,
+      var(--color-primary-100) 0%,
+      var(--color-primary-200) 20%,
+      var(--color-primary-300) 40%,
+      var(--color-primary-400) 60%,
+      var(--color-primary-500) 80%,
+      var(--color-primary-600) 100%);
   overflow: hidden;
 }
 
@@ -173,11 +188,9 @@ button:focus {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    ellipse at top left,
-    rgba(255 255 255 / 0.3),
-    transparent 70%
-  );
+  background: radial-gradient(ellipse at top left,
+      rgba(255 255 255 / 0.3),
+      transparent 70%);
   pointer-events: none;
   mix-blend-mode: overlay;
   transition: opacity 0.5s ease;
@@ -185,16 +198,15 @@ button:focus {
 }
 
 /* SECONDARY (gris azulado) */
-.s2, .s4 {
-  background: linear-gradient(
-    135deg,
-    var(--color-secondary-50) 0%,
-    var(--color-secondary-100) 20%,
-    var(--color-secondary-200) 40%,
-    var(--color-secondary-300) 60%,
-    var(--color-secondary-400) 80%,
-    var(--color-secondary-500) 100%
-  );
+.s2,
+.s4 {
+  background: linear-gradient(135deg,
+      var(--color-secondary-50) 0%,
+      var(--color-secondary-100) 20%,
+      var(--color-secondary-200) 40%,
+      var(--color-secondary-300) 60%,
+      var(--color-secondary-400) 80%,
+      var(--color-secondary-500) 100%);
   overflow: hidden;
 }
 
@@ -203,11 +215,9 @@ button:focus {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    ellipse at bottom right,
-    rgba(0 0 0 / 0.05),
-    transparent 70%
-  );
+  background: radial-gradient(ellipse at bottom right,
+      rgba(0 0 0 / 0.05),
+      transparent 70%);
   pointer-events: none;
   mix-blend-mode: multiply;
   transition: opacity 0.5s ease;
@@ -215,7 +225,7 @@ button:focus {
 }
 
 /* Aseguramos que el contenido esté por encima del overlay */
-.section > * {
+.section>* {
   position: relative;
   z-index: 1;
 }
@@ -223,6 +233,7 @@ button:focus {
 /* ----- SECCIÓN PROYECTOS ----- */
 .projects-container {
   display: flex;
+  flex-direction: column;
   gap: 2rem;
 }
 
@@ -239,6 +250,10 @@ button:focus {
   .about-section {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     justify-content: center;
+  }
+
+  .projects-container {
+    flex-direction: row;
   }
 }
 
