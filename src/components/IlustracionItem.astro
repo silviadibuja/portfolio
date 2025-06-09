@@ -1,0 +1,8 @@
+---
+// components/BentoItem.astro
+const { src, alt, span } = Astro.props;
+---
+
+<div class={`bento-item ${span}`}>
+    <img src={src} alt={alt} loading="lazy" />
+</div>

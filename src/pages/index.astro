@@ -1,31 +1,24 @@
 ---
+import Layout from '../layouts/Layout.astro';
 import Hero from "../components/Hero.astro";
 import Projects from "../components/Projects.astro";
 import About from "../components/About.astro";
 import ContactForm from "../components/ContactForm.astro";
 import Slider from "../components/Slider.astro";
 
-// Importar CSS correctamente
 import "../assets/css/reset.css";
 import "../assets/css/styles.css";
 import "../assets/css/typography.css";
 ---
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <Slider>
-      <Hero />
-      <Projects />
-      <About />
-      <ContactForm />
-    </Slider>
 
-    <!-- Script global JS (ubicado en public/scripts/index.js) -->
-    <script src="/scripts/index.js" defer></script>
-  </body>
-</html>
+<Layout>
+  <Slider>
+    <Hero />
+    <Projects />
+    <About />
+    <ContactForm />
+  </Slider>
+
+  <!-- JS global -->
+  <script src="/scripts/index.js" defer></script>
+</Layout>
