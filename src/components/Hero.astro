@@ -1,3 +1,40 @@
+<div class="cursor-indicator" id="cursor-indicator">
+        <div class="cursor-arrow" id="cursor-arrow"></div>
+    </div>
+
 <section class="section s1">
-    <h1><span>S</span> dibuja</h1>
+    <div class="text-container">
+            <div class="dibuja-text">
+                <span class="s-letter">S</span>
+                <span class="dibuja-word">dibuja</span>
+            </div>
+        </div>
 </section>
+
+<style>
+    .text-container {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+          /* Cambios de estilo del texto cuando el cursor está sobre él */
+        .text-container .dibuja-text .s-letter {
+            font-size: 24rem; /* Aumenta el tamaño de la 'S' */
+            color: #FF6F61; /* Cambia el color de la 'S' */
+        }
+
+        .text-container .dibuja-text .dibuja-word {
+            font-size: 10rem; /* Aumenta el tamaño de "dibuja" */
+            color: #007BFF; /* Cambia el color de "dibuja" */
+        }
+
+          .dibuja-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease; /* Para una transición suave del tamaño y color del texto */
+            position: relative;
+            z-index: 11;
+        }
+</style>

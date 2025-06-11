@@ -1,4 +1,4 @@
-<section class="section s2">
+<!-- <section class="section s2">
   <div class="container projects-container">
     <a href="/ilustracion" class="project-link"> 
       <div class="project">
@@ -21,4 +21,133 @@
       </div>
     </a>
   </div>
+</section> -->
+<style>
+  .s2 {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+  }
+  .wrapper {
+    position: relative;
+    height: 300px;
+    width: 500px;
+    margin: 50px 0;
+
+    display: flex;
+    flex-direction: row;
+
+    transition: all 200ms ease-in-out;
+  }
+
+  .image-wrapper {
+    height: 300px;
+    width: 450px;
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: all 200ms ease-in-out;
+  }
+
+  img {
+    height: 300px;
+    width: 450px;
+    object-fit: cover;
+    object-position: top;
+
+    transition: all 200ms ease-in-out;
+  }
+
+  .book-design-image {
+    object-position: center;
+  }
+
+  .header-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 300px;
+    width: 400px;
+    left: 240px;
+    transition: all 200ms ease-in-out;
+    overflow: hidden;
+  }
+
+  h3 {
+    position: relative;
+    bottom: -180px;
+    height: 300px;
+    color: #fff;
+    font-size: 3rem;
+    font-family: Oswald;
+    text-transform: uppercase;
+
+    transition: all 200ms ease-in-out;
+  }
+
+  .wrapper:hover img {
+    transform: scale(2);
+    /*object-position: bottom;*/
+  }
+
+  .wrapper:hover h3 {
+    bottom: 260px;
+    font-size: 4rem;
+    transform: scale(0.4);
+    width: 375px;
+    left: -50px;
+  }
+
+  .wrapper:hover .image-wrapper {
+    width: 800px;
+  }
+</style>
+<section class="section s2">
+  <div class="content">
+    <div class="wrapper">
+    <div class="image-wrapper">
+      <img
+        src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1583&q=80"
+      />
+    </div>
+    <div class="header-wrapper">
+      <h3>Ilustración digital</h3>
+      <a href="/ilustracion" class="project-link">
+        <h3>Ver proyecto</h3>
+      </a>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="image-wrapper">
+      <img
+        class="book-design-image"
+        src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1306&q=80"
+      />
+    </div>
+    <div class="header-wrapper">
+      <h3>IA</h3>
+      <h3>Ver proyecto</h3>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="image-wrapper">
+      <img
+        class="book-design-image"
+        src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1306&q=80"
+      />
+    </div>
+    <div class="header-wrapper">
+      <h3>Escenografía</h3>
+      <h3>Ver proyecto</h3>
+    </div>
+  </div>
+  </div>
+  
 </section>
