@@ -4,5 +4,7 @@ const { src, alt, span } = Astro.props;
 ---
 
 <div class={`bento-item ${span}`}>
-    <img src={src} alt={alt} loading="lazy" />
+    <picture>
+        <img src={src} alt={alt} loading="lazy" />
+    </picture>
 </div>

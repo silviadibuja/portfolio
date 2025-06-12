@@ -1,11 +1,18 @@
+---
+import { Image } from 'astro:assets';
+import ProfileImage from "../assets/img/Silvia.jpg";
+---
+
 <section class="section s3">
     <div class="container about-section">
         <div class="about-img">
-            <img
-                src="/public/img/Silvia.jpg"
-                alt="Foto de perfil"
-                srcset=""
-            />
+            <picture>
+                <Image
+                    src={ProfileImage}
+                    alt="Foto de perfil"
+                    srcset=""
+                />
+            </picture>
         </div>
         <div class="description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
