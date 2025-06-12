@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import ProfileImage from "../assets/img/Silvia.jpg";
 ---
 
@@ -7,8 +6,8 @@ import ProfileImage from "../assets/img/Silvia.jpg";
     <div class="container about-section">
         <div class="about-img">
             <picture>
-                <Image
-                    src={ProfileImage}
+                <img
+                    src={ProfileImage.src}
                     alt="Foto de perfil"
                     srcset=""
                 />
