@@ -20,13 +20,13 @@
 
           /* Cambios de estilo del texto cuando el cursor está sobre él */
         .text-container .dibuja-text .s-letter {
-            font-size: 24rem; /* Aumenta el tamaño de la 'S' */
-            color: #FF6F61; /* Cambia el color de la 'S' */
+            /* font-size: 24rem; Aumenta el tamaño de la 'S' */
+            /* color: #FF6F61; Cambia el color de la 'S' */
         }
 
         .text-container .dibuja-text .dibuja-word {
-            font-size: 10rem; /* Aumenta el tamaño de "dibuja" */
-            color: #007BFF; /* Cambia el color de "dibuja" */
+            /* font-size: 10rem; Aumenta el tamaño de "dibuja" */
+            color: #007BFF; /*Cambia el color de "dibuja" */
         }
 
           .dibuja-text {
@@ -36,5 +36,13 @@
             transition: all 0.3s ease; /* Para una transición suave del tamaño y color del texto */
             position: relative;
             z-index: 11;
+
+            .s-letter {
+                font-size: clamp(10rem, -5.765rem + 21.647vw, 36rem);
+            }
+
+            .dibuja-word {
+                font-size: clamp(4rem, -1.647rem + 8.471vw, 10rem);
+            }
         }
 </style>

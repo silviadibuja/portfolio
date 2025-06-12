@@ -149,22 +149,22 @@ button:focus {
 
 /* Posiciones de las secciones */
 .s1 {
-  top: calc(0vh - 60px);
+  top: calc(0vh - 55px);
   left: 0;
 }
 
 .s2 {
-  top: calc(100vh - 60px);
+  top: calc(100vh - 55px);
   left: 0;
 }
 
 .s3 {
-  top: calc(100vh - 60px);
+  top: calc(100vh - 55px);
   left: 100vw;
 }
 
 .s4 {
-  top: calc(200vh - 60px);
+  top: calc(200vh - 55px);
   left: 100vw;
 }
 
