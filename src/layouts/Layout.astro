@@ -48,11 +48,45 @@
     <meta name="twitter:image" content="https://www.sdibuja.com/og-image.jpg" />
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="/src/assets/styles.css" />
+    <link rel="stylesheet" href="/src/assets/css/styles.css" />
   </head>
   <body>
     <main>
       <slot />
     </main>
+
+    <!-- Performance monitoring -->
+    <script>
+      // Simple performance monitoring
+      window.addEventListener("load", () => {
+        const perfData = performance.getEntriesByType(
+          "navigation",
+        )[0] as PerformanceNavigationTiming;
+        console.log(
+          "Page load time:",
+          perfData.loadEventEnd - perfData.loadEventStart,
+          "ms",
+        );
+      });
+
+      // Lazy load images that are not immediately visible
+      if ("IntersectionObserver" in window) {
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+        const imageObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const img = entry.target as HTMLImageElement;
+              if (img.dataset.src) {
+                img.src = img.dataset.src;
+                img.removeAttribute("data-src");
+                imageObserver.unobserve(img);
+              }
+            }
+          });
+        });
+
+        lazyImages.forEach((img) => imageObserver.observe(img));
+      }
+    </script>
   </body>
 </html>

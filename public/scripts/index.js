@@ -115,27 +115,4 @@ window.addEventListener("touchend", (e) => {
 // Init
 moveToStep(currentStep);
 
-const dibujaText = document.querySelector('.dibuja-text');
 
-const cursorIndicator = document.getElementById('cursor-indicator');
-
-
-document.addEventListener('mousemove', function (e) {
-  cursorIndicator.style.left = e.clientX + 'px';
-  cursorIndicator.style.top = e.clientY + 'px';
-
-  const rect = dibujaText.getBoundingClientRect();
-  const isOverText = (
-    e.clientX >= rect.left &&
-    e.clientX <= rect.right &&
-    e.clientY >= rect.top &&
-    e.clientY <= rect.bottom
-  );
-
-  if (isOverText) {
-    cursorIndicator.classList.add('over-text');
-  } else {
-    cursorIndicator.classList.remove('over-text');
-  }
-
-});
