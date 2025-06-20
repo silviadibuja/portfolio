@@ -150,22 +150,22 @@ button:focus {
 /* Posiciones de las secciones */
 
   .s1 {
-    top: 0vh;
+    top: 0dvh;
     left: 0;
   }
 
   .s2 {
-    top: 100vh;
+    top: 100dvh;
     left: 0;
   }
 
   .s3 {
-    top: 100vh;
+    top: 100dvh;
     left: 100vw;
   }
 
   .s4 {
-    top: 200vh;
+    top: 200dvh;
     left: 100vw;
   }
 
