@@ -133,7 +133,8 @@ button:focus {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100dvh;
+  height: 100dvh; /* Para navegadores modernos */
+  height: calc(var(--vh, 1vh) * 100); /* Fallback */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,25 +148,24 @@ button:focus {
   transition: background 0.5s ease;
 }
 
-/* Posiciones de las secciones */
-
+/* Posiciones de las secciones usando la variable --vh */
 .s1 {
-  top: 0dvh;
+  top: calc(var(--vh, 1vh) * 0);
   left: 0;
 }
 
 .s2 {
-  top: 100dvh;
+  top: calc(var(--vh, 1vh) * 100);
   left: 0;
 }
 
 .s3 {
-  top: 100dvh;
+  top: calc(var(--vh, 1vh) * 100);
   left: 100vw;
 }
 
 .s4 {
-  top: 200dvh;
+  top: calc(var(--vh, 1vh) * 200);
   left: 100vw;
 }
 

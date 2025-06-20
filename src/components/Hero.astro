@@ -102,6 +102,7 @@
         }
 
         window.addEventListener("resize", setFullHeight);
+        window.addEventListener("orientationchange", setFullHeight); // útil en móviles
         setFullHeight();
     });
 </script>
