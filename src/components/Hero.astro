@@ -1,5 +1,5 @@
 <style>
-    section.section {
+    /* section.section {
         height: 100vh;
         display: flex;
         align-items: center;
@@ -7,7 +7,7 @@
         background: #f7f7f7;
         position: relative;
         overflow: hidden;
-    }
+    } */
 
     .text-container {
         text-align: center;
@@ -96,13 +96,15 @@
             }
         });
 
-        function setFullHeight() {
-            const vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty("--vh", `${vh}px`);
-        }
+        window.addEventListener("resize", setSectionHeight);
 
-        window.addEventListener("resize", setFullHeight);
-        window.addEventListener("orientationchange", setFullHeight); // útil en móviles
-        setFullHeight();
+        function setSectionHeight() {
+            const sections = document.querySelectorAll("section"); // Or a more specific selector for your sections
+            const viewportHeight = window.innerHeight;
+
+            sections.forEach((section) => {
+                section.style.height = `${viewportHeight}px`;
+            });
+        }
     });
 </script>

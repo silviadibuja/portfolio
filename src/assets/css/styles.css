@@ -106,17 +106,19 @@ button:focus {
 /* ----- VIEWPORT & SLIDER ----- */
 .viewport {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
+  /* Esto es CLAVE para que no se vea el resto de las secciones */
   position: relative;
-  cursor: auto;
+  /* O lo que necesites para contener el slider */
 }
 
 .slider {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transition: transform 1s ease-in-out;
+  position: relative;
+  width: 300vw;
+  height: 300dvh;
+  overflow: hidden;
+  transition: transform 0.5s ease;
 }
 
 /* ----- CONTENEDOR ----- */
@@ -133,8 +135,7 @@ button:focus {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100dvh; /* Para navegadores modernos */
-  height: calc(var(--vh, 1vh) * 100); /* Fallback */
+  height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -148,24 +149,25 @@ button:focus {
   transition: background 0.5s ease;
 }
 
-/* Posiciones de las secciones usando la variable --vh */
+/* Posiciones de las secciones */
+
 .s1 {
-  top: calc(var(--vh, 1vh) * 0);
+  top: 0dvh;
   left: 0;
 }
 
 .s2 {
-  top: calc(var(--vh, 1vh) * 100);
+  top: 100dvh;
   left: 0;
 }
 
 .s3 {
-  top: calc(var(--vh, 1vh) * 100);
+  top: 100dvh;
   left: 100vw;
 }
 
 .s4 {
-  top: calc(var(--vh, 1vh) * 200);
+  top: 200dvh;
   left: 100vw;
 }
 
@@ -181,7 +183,7 @@ button:focus {
       var(--color-primary-400) 60%,
       var(--color-primary-500) 80%,
       var(--color-primary-600) 100%); */
-  background-color: #e6c90a;
+  background-color: #f7f7f7;
   overflow: hidden;
 }
 
@@ -258,26 +260,6 @@ button:focus {
   .projects-container {
     flex-direction: row;
   }
-
-  /* .s1 {
-    top: calc(0dvh + 55px);
-    left: 0;
-  }
-
-  .s2 {
-    top: calc(100dvh + 55px);
-    left: 0;
-  }
-
-  .s3 {
-    top: calc(100dvh + 55px);
-    left: 100vw;
-  }
-
-  .s4 {
-    top: calc(200dvh + 55px);
-    left: 100vw;
-  } */
 }
 
 @media screen and (min-width: 64rem) {

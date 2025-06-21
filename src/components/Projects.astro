@@ -1,27 +1,3 @@
-<!-- <section class="section s2">
-  <div class="container projects-container">
-    <a href="/ilustracion" class="project-link"> 
-      <div class="project">
-        <h3>Ilustración</h3>
-        <p>Un sitio web creado con Astro y CSS puro para mostrar mi trabajo.</p>
-      </div>
-    </a>
-    <a href="/ia" class="project-link">
-      <div class="project">
-        <h3>IA</h3>
-        <p>Aplicación fullstack con Node.js y MongoDB para gestión de tareas.</p>
-      </div>
-    </a>
-    <a href="/escenografia" class="project-link">
-      <div class="project">
-        <h3>Escenografía</h3>
-        <p>
-          Blog con markdown y comentarios dinámicos, enfocado en desarrollo web.
-        </p>
-      </div>
-    </a>
-  </div>
-</section> -->
 <style>
   .s2 .content {
     display: flex;
@@ -32,10 +8,7 @@
     height: 100%;
     overflow-y: auto;
     gap: 1rem;
-    padding-top: 2rem;
   }
-
-
 
   .wrapper {
     width: 280px;
@@ -44,77 +17,115 @@
     display: flex;
     flex-direction: column;
     transition: all 200ms ease-in-out;
+
+    .image-wrapper {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 200ms ease-in-out;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: all 200ms ease-in-out;
+      }
+
+      .book-design-image {
+        object-position: center;
+      }
+    }
+
+    .header-wrapper {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      transition: all 200ms ease-in-out;
+
+      h3 {
+        color: #fff;
+        font-size: 1.5rem;
+        font-family: Oswald, sans-serif;
+        text-transform: uppercase;
+        margin: 0.5rem 0;
+        transition: all 200ms ease-in-out;
+      }
+    }
   }
 
-  .image-wrapper {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 200ms ease-in-out;
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: all 200ms ease-in-out;
-  }
-
-  .book-design-image {
-    object-position: center;
-  }
-
-  .header-wrapper {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.3);
-    transition: all 200ms ease-in-out;
-  }
-
-  h3 {
-    color: #fff;
-    font-size: 1.5rem;
-    font-family: Oswald, sans-serif;
-    text-transform: uppercase;
-    margin: 0.5rem 0;
-    transition: all 200ms ease-in-out;
-  }
-
-  .wrapper:hover img {
-    transform: scale(1.1);
-  }
-
-  .wrapper:hover h3 {
-    font-size: 1.8rem;
-  }
-
-    @media (min-width: 768px) {
+  @media (min-width: 768px) {
     .s2 .content {
-      flex-direction: row; /* En escritorio: fila */
       justify-content: center;
       overflow: hidden;
+      padding: 2rem 0;
+      padding-inline: calc(2rem + 50px);
+      max-width: 1920px;
     }
 
     .wrapper {
-      width: 300px;
-      height: 400px;
+      width: 600px;
+      height: 180px;
+
+      .image-wrapper {
+        width: 450px;
+        height: 180px;
+
+        img {
+          width: 450px;
+          height: 180px;
+        }
+      }
+
+      .header-wrapper {
+        overflow: hidden;
+        h3 {
+          position: relative;
+          font-size: 3.5rem;
+          top: 80px;
+        }
+      }
+
+      &:hover img {
+        transform: scale(2);
+      }
+
+      &:hover h3 {
+        top: -80px;
+        transform: scale(.5);
+        left: 150px;
+      }
+
+      &:hover .image-wrapper {
+        width: 600px;
+      }
+      &.ilustracion {
+        align-self: flex-start;
+      }
+
+      &.escenografia {
+        align-self: flex-end;
+      }
+    }
+
+    .ilustracion .header-wrapper{
+      width: max-content;
+      left: 100px;
     }
   }
 </style>
 
 <section class="section s2">
   <div class="content">
-    <div class="wrapper">
+    <div class="wrapper ilustracion">
       <div class="image-wrapper">
         <img
           src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=1583&q=80"
@@ -128,7 +139,7 @@
       </div>
     </div>
 
-    <div class="wrapper">
+    <div class="wrapper ia">
       <div class="image-wrapper">
         <img
           class="book-design-image"
@@ -141,7 +152,7 @@
       </div>
     </div>
 
-    <div class="wrapper">
+    <div class="wrapper escenografia">
       <div class="image-wrapper">
         <img
           class="book-design-image"
