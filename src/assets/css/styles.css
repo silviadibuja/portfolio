@@ -108,9 +108,7 @@ button:focus {
   width: 100vw;
   height: 100dvh;
   overflow: hidden;
-  /* Esto es CLAVE para que no se vea el resto de las secciones */
   position: relative;
-  /* O lo que necesites para contener el slider */
 }
 
 .slider {

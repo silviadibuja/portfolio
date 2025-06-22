@@ -9,16 +9,54 @@ import Slider from "@/components/Slider.astro";
 import "@/assets/css/reset.css";
 import "@/assets/css/styles.css";
 import "@/assets/css/typography.css";
+
+const showMaintenance = import.meta.env.SHOW_MAINTENANCE === 'true';
 ---
 
-<Layout>
-  <Slider>
-    <Hero />
-    <Projects />
-    <About />
-    <ContactForm />
-  </Slider>
+{showMaintenance ? (
+  <html lang="es">
+    <head>
+      <meta charset="UTF-8" />
+      <title>En construcción</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <style>
+        body {
+          margin: 0;
+          padding: 0;
+          background: #1e1e1e;
+          color: #fff;
+          font-family: system-ui, sans-serif;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          text-align: center;
+        }
+        h1 {
+          font-size: 2rem;
+        }
+        p {
+          opacity: 0.8;
+          margin-top: 0.5rem;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>🚧 Sitio en construcción 🚧</h1>
+      <p>Estamos trabajando para traerte algo genial. Vuelve pronto.</p>
+    </body>
+  </html>
+) : (
+  <Layout>
+    <Slider>
+      <Hero />
+      <Projects />
+      <About />
+      <ContactForm />
+    </Slider>
 
-  <!-- JS global -->
-  <script src="/scripts/index.js" defer></script>
-</Layout>
+    <!-- JS global -->
+    <script src="/scripts/index.js" defer></script>
+  </Layout>
+)}
