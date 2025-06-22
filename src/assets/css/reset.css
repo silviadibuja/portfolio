@@ -78,3 +78,26 @@ picture {
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
 }
+
+
+
+.maintenance {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1e1e1e;
+  color: white;
+  text-align: center;
+  font-family: system-ui, sans-serif;
+}
+
+.maintenance h1 {
+  font-size: 2rem;
+}
+
+.maintenance p {
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}

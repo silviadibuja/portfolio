@@ -15,22 +15,10 @@ const showMaintenance = import.meta.env.SHOW_MAINTENANCE === 'true';
 
 <Layout>
   {showMaintenance ? (
-    <div style="
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #1e1e1e;
-      color: white;
-      text-align: center;
-      font-family: system-ui, sans-serif;
-    ">
-      <h1 style="font-size: 2rem;">🚧 Sitio en construcción 🚧</h1>
-      <p style="opacity: 0.8; margin-top: 0.5rem;">
-        Estamos trabajando para traerte algo genial. Vuelve pronto.
-      </p>
-    </div>
+    <section class="maintenance">
+      <h1>🚧 Sitio en construcción 🚧</h1>
+      <p>Estamos trabajando para traerte algo genial. Vuelve pronto.</p>
+    </section>
   ) : (
     <>
       <Slider>
@@ -39,8 +27,6 @@ const showMaintenance = import.meta.env.SHOW_MAINTENANCE === 'true';
         <About />
         <ContactForm />
       </Slider>
-
-      <!-- JS global -->
       <script src="/scripts/index.js" defer></script>
     </>
   )}
