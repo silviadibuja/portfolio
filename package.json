@@ -6,10 +6,14 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "preview:prod": "cross-env NODE_ENV=production astro build && cross-env NODE_ENV=production astro preview"
   },
   "dependencies": {
     "astro": "^5.10.0",
     "gsap": "^3.13.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
