@@ -13,6 +13,8 @@ import "@/assets/css/typography.css";
 const isProduction = import.meta.env.MODE === 'production';
 const showMaintenance = import.meta.env.SHOW_MAINTENANCE === 'true';
 const showMaintenanceInProduction = isProduction && showMaintenance;
+console.log({ isProduction, showMaintenance }); // 👈 útil para debug
+
 ---
 
 <Layout>
