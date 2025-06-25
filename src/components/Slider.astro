@@ -2,4 +2,28 @@
     <div class="slider" id="slider">
         <slot />
     </div>
+
+    <!-- Cursor fuera del slider, pero dentro del viewport -->
+    <div class="cursor-indicator" id="cursor-indicator"></div>
 </div>
+
+<style>
+    .cursor-indicator {
+    position: fixed;
+    pointer-events: none;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    z-index: 9999;
+    will-change: top, left, transform;
+    transition: all 0.3s ease;
+  }
+
+    .cursor-indicator.over-text {
+        width: 150px;
+        height: 150px;
+        background-color: rgba(0, 123, 255, 0.2);
+        border-color: #007bff;
+    }
+</style>

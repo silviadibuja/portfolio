@@ -1,3 +1,7 @@
+---
+import Scrolling from "@/components/Scrolling.astro";
+---
+
 <style>
     .text-container {
         text-align: center;
@@ -11,42 +15,30 @@
         justify-content: center;
         transition: all 0.3s ease;
         gap: 1rem;
+
+        span {
+            pointer-events: none;
+        }
     }
 
-    .s-letter,
+    .s-letter {
+        font-size: clamp(18rem, -5.765rem + 7.647vw, 26rem);
+        transition: all 0.3s ease;
+    }
+
     .dibuja-word {
-        font-size: 5rem;
+        font-size: clamp(10rem, -5.765rem + 7.647vw, 26rem);
         transition: all 0.3s ease;
     }
 
     .dibuja-text.hovered .s-letter {
-        font-size: clamp(10rem, -5.765rem + 21.647vw, 36rem);
-        color: #ff6f61;
+        font-size: clamp(24rem, -5.765rem + 21.647vw, 36rem);
+        color: #ff6f61 !important;
     }
 
     .dibuja-text.hovered .dibuja-word {
-        font-size: clamp(4rem, -1.647rem + 8.471vw, 10rem);
-
+        font-size: clamp(12rem, -1.647rem + 8.471vw, 26rem);
         color: #007bff;
-    }
-
-    .cursor-indicator {
-        position: fixed;
-        pointer-events: none;
-        width: 40px;
-        height: 40px;
-        border: 2px solid #000;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-        transform: translate(-50%, -50%);
-        z-index: 999;
-    }
-
-    .cursor-indicator.over-text {
-        width: 312px;
-        height: 312px;
-        background-color: rgba(0, 123, 255, 0.2);
-        border-color: #007bff;
     }
 </style>
 
@@ -57,44 +49,5 @@
             <span class="dibuja-word">dibuja</span>
         </div>
     </div>
-
-    <div class="cursor-indicator" id="cursor-indicator"></div>
+    <Scrolling direction="down" />
 </section>
-
-<script is:inline>
-    document.addEventListener("DOMContentLoaded", () => {
-        const dibujaText = document.querySelector(".dibuja-text");
-        const cursorIndicator = document.getElementById("cursor-indicator");
-
-        document.addEventListener("mousemove", function (e) {
-            cursorIndicator.style.left = e.clientX + "px";
-            cursorIndicator.style.top = e.clientY + "px";
-
-            const rect = dibujaText.getBoundingClientRect();
-            const isOverText =
-                e.clientX >= rect.left &&
-                e.clientX <= rect.right &&
-                e.clientY >= rect.top &&
-                e.clientY <= rect.bottom;
-
-            if (isOverText) {
-                cursorIndicator.classList.add("over-text");
-                dibujaText.classList.add("hovered");
-            } else {
-                cursorIndicator.classList.remove("over-text");
-                dibujaText.classList.remove("hovered");
-            }
-        });
-
-        window.addEventListener("resize", setSectionHeight);
-
-        function setSectionHeight() {
-            const sections = document.querySelectorAll("section"); // Or a more specific selector for your sections
-            const viewportHeight = window.innerHeight;
-
-            sections.forEach((section) => {
-                section.style.height = `${viewportHeight}px`;
-            });
-        }
-    });
-</script>

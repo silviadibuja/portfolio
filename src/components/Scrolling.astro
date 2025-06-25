@@ -1,0 +1,64 @@
+---
+const { direction = "down" } = Astro.props;
+import ArrowSvg from "@/assets/arrow-down.svg";
+---
+
+<style>
+  /* Pega aquí el CSS de arriba */
+  @keyframes bounce-vertical {
+    0%, 100% {
+      transform: translateY(0) scale(0.8);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateY(-5px) scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes bounce-horizontal {
+    0%, 100% {
+      transform: translateX(0) scale(0.8);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateX(-5px) scale(1);
+      opacity: 1;
+    }
+  }
+
+  .arrow-btn {
+    width: 5rem;
+    position: absolute;
+    transition: transform 0.3s ease;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  .arrow-down {
+    transform: rotate(0deg);
+    bottom: 0;
+    animation-name: bounce-vertical;
+  }
+
+  .arrow-up {
+    transform: rotate(180deg);
+    bottom: 0;
+    animation-name: bounce-vertical;
+  }
+
+  .arrow-left {
+    transform: rotate(-90deg);
+    left: 0;
+    animation-name: bounce-horizontal;
+  }
+
+  .arrow-right {
+    transform: rotate(270deg);
+    right: 0;
+    animation-name: bounce-horizontal;
+  }
+</style>
+
+<ArrowSvg class={`arrow-btn arrow-${direction}`} />

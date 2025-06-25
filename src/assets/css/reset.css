@@ -44,7 +44,12 @@
   --color-secondary-900: hsl(211, 100%, 12%);
   --color-secondary-950: hsl(211, 100%, 6%);
 
-
+  /* Variables generales */
+  --border-radius: 8px;
+  --border-radius-sm: 4px;
+  --transition-default: 0.3s ease;
+  --box-shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --font-sans: system-ui, sans-serif;
 
 }
 
@@ -52,16 +57,17 @@ body {
   font-family: var(--font-family);
   line-height: 1.6;
   overflow: hidden;
+  cursor: none;
 }
 
 a,
 button {
-  cursor: pointer;
   user-select: none;
   white-space: nowrap;
   border: none;
   outline: none;
   color: inherit;
+  cursor: none;
   background: unset;
 }
 
