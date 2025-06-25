@@ -10,15 +10,15 @@ import "@/assets/css/typography.css";
 import "@/assets/css/reset.css";
 import "@/assets/css/styles.css";
 
-const isProduction = import.meta.env.MODE === "production";
-const showMaintenance = import.meta.env.PUBLIC_SHOW_MAINTENANCE === "true";
-const showMaintenanceInProduction = isProduction && showMaintenance;
-console.log({ isProduction, showMaintenance });
-console.log("hola");
+// const isProduction = import.meta.env.MODE === "production";
+// const showMaintenance = import.meta.env.PUBLIC_SHOW_MAINTENANCE === "true";
+// const showMaintenanceInProduction = isProduction && showMaintenance;
+// console.log({ isProduction, showMaintenance });
+// console.log("hola");
 ---
 
 <Layout>
-  {
+  <!-- {
     showMaintenanceInProduction ? (
       <section class="maintenance">
         <h1>🚧 Sitio en construcción 🚧</h1>
@@ -27,7 +27,7 @@ console.log("hola");
           pronto.
         </p>
       </section>
-    ) : (
+    ) : ( -->
       <>
         <Slider>
           <Hero />
@@ -40,6 +40,6 @@ console.log("hola");
         <script type="module" src="/scripts/customHero.js" />
 
       </>
-    )
-  }
+  <!-- //   )
+  // } -->
 </Layout>
