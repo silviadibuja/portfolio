@@ -1,6 +1,46 @@
+---
+import BackgroundWaves from "./BackgroundWaves.astro";
+---
+
+<style>
+  .contact-container {
+    position: absolute;
+    display: flex;
+  }
+
+  .contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-right: 3rem;
+    justify-content: space-evenly;
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+</style>
+
 <section class="section s4">
-  <div class="container">
-    <h3>¿Quieres trabajar conmigo o tienes alguna pregunta? Escríbeme.</h3>
+  <BackgroundWaves dual={true} colorLeft="#2c3ec6" colorRight="#20b2aa" layout="full"/>
+  <div class="container contact-container">
+    <div class="contact-content">
+      <div class="contact-title">
+        <h2>Abro buzón de ideas</h2>
+      </div>
+      <div class="contact-info">
+        <p>¿Tienes una historia que pide a gritos color?</p>
+        <p>¿Un proyecto que quiere cobrar vida?</p>
+        <p>
+          Cuéntamelo. Estoy al otro lado, con lápices afilados y muchas ganas de
+          crear.
+        </p>
+        <p>Rellena el formulario y empezamos a dibujar juntos.</p>
+      </div>
+    </div>
     <form action="#" method="POST">
       <label for="nombre">Nombre:</label>
       <input type="text" id="nombre" name="nombre" required />

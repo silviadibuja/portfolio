@@ -166,7 +166,7 @@ button:focus {
       var(--color-secondary-300) 60%,
       var(--color-secondary-400) 80%,
       var(--color-secondary-500) 100%); */
-  background-color: #007BFF;
+  background-color: #d4dc00;
   overflow: hidden;
 }
 
@@ -198,54 +198,3 @@ button:focus {
 }
 
 /* ----- SECCIÓN ABOUT ----- */
-.about-section {
-  display: grid;
-  row-gap: 3rem;
-  column-gap: 2rem;
-  align-items: center;
-  padding: 2rem 0;
-}
-
-@media screen and (min-width: 48rem) {
-  .about-section {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    justify-content: center;
-  }
-
-  .projects-container {
-    flex-direction: row;
-  }
-}
-
-@media screen and (min-width: 64rem) {
-  .about-section {
-    grid-template-columns: 1fr max-content;
-    column-gap: 4rem;
-  }
-}
-
-.about-img {
-  display: block;
-  height: auto;
-  object-fit: cover;
-  justify-self: center;
-}
-
-@media screen and (min-width: 48rem) {
-  .about-img {
-    order: 1;
-  }
-}
-
-@media screen and (min-width: 64rem) {
-  .about-img {
-    margin-right: 5rem;
-  }
-}
-
-.description {
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  row-gap: 1.5rem;
-}
