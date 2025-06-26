@@ -95,8 +95,7 @@ button:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  color: white;
+  color: #ffffff;
   overflow: hidden;
   user-select: none;
   font-weight: 600;

@@ -6,6 +6,8 @@ import BackgroundWaves from "./BackgroundWaves.astro";
   .contact-container {
     position: absolute;
     display: flex;
+    flex-direction: column;
+    z-index: 20;
   }
 
   .contact-content {
@@ -19,13 +21,37 @@ import BackgroundWaves from "./BackgroundWaves.astro";
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      p {
+        display: none;
+
+        &:last-child {
+          display: block;
+        }
+      }
     }
   }
 
+  @media screen and (min-width: 48rem) {
+    .contact-container {
+      flex-direction: row;
+    }
+    .contact-content {
+      .contact-info {
+        p {
+          display: block;
+        }
+      }
+    }
+  }
 </style>
 
 <section class="section s4">
-  <BackgroundWaves dual={true} colorLeft="#2c3ec6" colorRight="#20b2aa" layout="full"/>
+  <BackgroundWaves
+    dual={true}
+    colorLeft="#2c3ec6"
+    colorRight="#20b2aa"
+    layout="full"
+  />
   <div class="container contact-container">
     <div class="contact-content">
       <div class="contact-title">
