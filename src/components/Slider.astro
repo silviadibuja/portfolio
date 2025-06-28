@@ -1,29 +1,62 @@
+---
+import Smile from "@/assets/smile.svg";
+import { runAnimations } from "@/scripts/customHero";
+---
+
 <div class="viewport" id="viewport">
     <div class="slider" id="slider">
         <slot />
     </div>
 
-    <!-- Cursor fuera del slider, pero dentro del viewport -->
-    <div class="cursor-indicator" id="cursor-indicator"></div>
+    <div class="cursor-indicator" id="cursor-indicator">
+        <Smile />
+    </div>
 </div>
 
 <style>
     .cursor-indicator {
-    position: fixed;
-    pointer-events: none;
-    width: 40px;
-    height: 40px;
-    border: 2px solid #000;
-    border-radius: 50%;
-    z-index: 9999;
-    will-change: top, left, transform;
-    transition: all 0.3s ease;
-  }
+        position: fixed;
+        pointer-events: none;
+        width: 40px;
+        height: 40px;
+        z-index: 9999;
+        will-change: top, left, transform;
+        transition: all 0.3s ease;
+    }
 
     .cursor-indicator.over-text {
         width: 150px;
         height: 150px;
-        background-color: rgba(0, 123, 255, 0.2);
-        border-color: #007bff;
+        background-color: transparent;
+    }
+
+    /* SVG default styles */
+    .cursor-indicator svg .cls-1,
+    .cursor-indicator svg .cls-2 {
+        fill: currentColor;
+        stroke: #fff;
+        transition: all 0.3s ease;
+    }
+
+    .cursor-indicator svg .cls-3 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        transition: all 0.3s ease;
+    }
+
+    /* SVG styles when hovering over text */
+    .cursor-indicator.over-text svg .cls-1,
+    .cursor-indicator.over-text svg .cls-2 {
+        fill: none;
+        stroke: #007bff;
+    }
+
+    .cursor-indicator.over-text svg .cls-3 {
+        stroke: #007bff;
     }
 </style>
+<!-- 
+<script type="module" client:load>
+  runAnimations();
+</script> -->

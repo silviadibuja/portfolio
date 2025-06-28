@@ -95,7 +95,7 @@ button:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: var(--color-white-primary);
   overflow: hidden;
   user-select: none;
   font-weight: 600;
@@ -128,45 +128,17 @@ button:focus {
 /* Gradientes profesionales con overlays */
 
 /* PRIMARY (amarillo) */
-.s1,
+.s1{
+  background-color: var(--color-primary);
+  overflow: hidden;
+}
+
+.s2 {
+  background-color: var(--color-white-primary);
+  overflow: hidden;
+}
 .s3 {
-  /* background: linear-gradient(135deg,
-      var(--color-primary-100) 0%,
-      var(--color-primary-200) 20%,
-      var(--color-primary-300) 40%,
-      var(--color-primary-400) 60%,
-      var(--color-primary-500) 80%,
-      var(--color-primary-600) 100%); */
-  background-color: #f7f7f7;
-  overflow: hidden;
-}
-
-.s1::before,
-.s3::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at top left,
-      rgba(255 255 255 / 0.3),
-      transparent 70%);
-  pointer-events: none;
-  mix-blend-mode: overlay;
-  transition: opacity 0.5s ease;
-  z-index: 0;
-}
-
-/* SECONDARY (gris azulado) */
-.s2,
-.s4 {
-  /* background: linear-gradient(135deg,
-      var(--color-secondary-50) 0%,
-      var(--color-secondary-100) 20%,
-      var(--color-secondary-200) 40%,
-      var(--color-secondary-300) 60%,
-      var(--color-secondary-400) 80%,
-      var(--color-secondary-500) 100%); */
-  background-color: #d4dc00;
-  overflow: hidden;
+  background-color: var(--color-secondary);
 }
 
 .s2::before,

@@ -13,22 +13,13 @@ import BackgroundWaves from "./BackgroundWaves.astro";
         z-index: 20;
 
         .about-img {
-            width: 50%;
+            width: 30%;
 
             img {
                 width: 100%;
                 height: auto;
                 display: block;
-                mask-image: linear-gradient(
-                    to bottom,
-                    black 80%,
-                    transparent 100%
-                );
-                -webkit-mask-image: linear-gradient(
-                    to bottom,
-                    black 80%,
-                    transparent 100%
-                );
+               
             }
         }
 
@@ -90,7 +81,7 @@ import BackgroundWaves from "./BackgroundWaves.astro";
 </style>
 
 <section class="section s3">
-    <BackgroundWaves layout="split" color="#d4dc00" />
+    <BackgroundWaves color="#344293" mirror={true} withBackground={true}/>
 
     <div class="container about-section">
         <div class="about-img">

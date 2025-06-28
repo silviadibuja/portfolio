@@ -1,6 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tangerine:wght@400;700&display=swap');
 
+/* Registra tu font family personalizada y le indicamos al navegador dónde encontrarla. */
+@font-face {
+  font-family: 'Sentient';
+  src: url('/fonts/Sentient-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bricolage';
+  src: url('/fonts/BricolageGrotesque-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 /* Reset básico */
 *,
@@ -19,30 +36,9 @@
 
 :root {
   --font-family: "Montserrat", sans-serif;
-  --color-primary-50: hsl(60, 89%, 94%);
-  --color-primary-100: hsl(53, 96%, 88%);
-  --color-primary-200: hsl(54, 98%, 76%);
-  --color-primary-300: hsl(54, 98%, 66%);
-  --color-primary-400: hsl(53, 97%, 52%);
-  --color-primary-500: hsl(52, 92%, 47%);
-  --color-primary-600: hsl(47, 96%, 41%);
-  --color-primary-700: hsl(41, 90%, 33%);
-  --color-primary-800: hsl(37, 78%, 29%);
-  --color-primary-900: hsl(33, 71%, 26%);
-  --color-primary-950: hsl(30, 77%, 14%);
-
-  --color-secondary-50: hsl(211, 100%, 98%);
-  --color-secondary-100: hsl(211, 100%, 93%);
-  --color-secondary-200: hsl(211, 100%, 85%);
-  --color-secondary-300: hsl(211, 100%, 75%);
-  --color-secondary-400: hsl(211, 100%, 65%);
-  --color-secondary-500: hsl(211, 100%, 50%);
-  /* #007BFF */
-  --color-secondary-600: hsl(211, 100%, 40%);
-  --color-secondary-700: hsl(211, 100%, 30%);
-  --color-secondary-800: hsl(211, 100%, 20%);
-  --color-secondary-900: hsl(211, 100%, 12%);
-  --color-secondary-950: hsl(211, 100%, 6%);
+  --color-primary: #dfdd19;
+  --color-secondary: #354093;
+  --color-white-primary: #ffffff;
 
   /* Variables generales */
   --border-radius: 8px;
