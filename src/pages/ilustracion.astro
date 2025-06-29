@@ -4,77 +4,28 @@ import IlustracionItem from "@/components/IlustracionItem.astro";
 import "@/assets/css/reset.css";
 import "@/assets/css/styles.css";
 import "@/assets/css/typography.css";
+import GoBack from "@/assets/go-back-arrow.svg";
 ---
 
 <style>
-
-  .bento-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1rem;
-    max-width: 1200px;
-    width: 100%;
+  .go-back {
+    position: fixed;
+    top: 2rem;
+    left: 3rem;
   }
-
-  .bento-item {
-    overflow: hidden;
-    border-radius: 1rem;
-    width: 100%;
-    height: 100%;
-  }
-
-  .bento-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  /* Span por defecto en desktop */
-  .span-2x2 {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
-
-  .span-3x1 {
-    grid-column: span 3;
-    grid-row: span 1;
-  }
-
-  .span-1x1 {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-
-  /* En tablets, limitamos los spans para que no se rompa */
-  @media (max-width: 900px) {
-    .span-2x2,
-    .span-3x1 {
-      grid-column: span 2;
-      grid-row: span 1;
-    }
-  }
-
-  /* En móviles, todo se convierte en 1x1 */
-  @media (max-width: 600px) {
-    .span-2x2,
-    .span-3x1,
-    .span-1x1 {
-      grid-column: span 1;
-      grid-row: span 1;
-    }
-
-    .bento-grid {
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      grid-auto-rows: 120px;
-    }
+  .go-back svg {
+    width: 2rem;
+    height: 2rem;
   }
 </style>
 
-  <section>
-    <div class="bento-grid">
-      {ilustraciones.map((item) => (
-        <IlustracionItem {...item} />
-      ))}
-    </div>
-  </section>
+<section class="section-ilustracion">
+  <div class="go-back">
+    <a href="javascript:history.back()" aria-label="Volver atrás">
+      <GoBack />
+    </a>
+  </div>
+  <div class="gallery">
+    {ilustraciones.map((item) => <IlustracionItem {...item} />)}
+  </div>
+</section>

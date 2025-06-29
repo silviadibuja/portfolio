@@ -3,8 +3,6 @@
 const { src, alt, span } = Astro.props;
 ---
 
-<div class={`bento-item ${span}`}>
-    <picture>
-        <img src={src} alt={alt} loading="lazy" />
-    </picture>
-</div>
+<figure class="gallery-item">
+    <img src={src} alt={alt} loading="lazy" class="gallery-item__image" />
+</figure>
