@@ -21,37 +21,21 @@ import Smile from "@/assets/smile.svg";
         z-index: 9999;
         will-change: top, left, transform;
         transition: all 0.3s ease;
+        color: var(--color-secondary); /* color azul para relleno y borde */
     }
 
     .cursor-indicator.over-text {
         width: 150px;
         height: 150px;
         background-color: transparent;
+        color: transparent; /* quita relleno */
+        border: 2px solid var(--color-secondary); /* borde azul */
+        border-radius: 50%; /* para que el borde sea redondo */
+        box-sizing: border-box;
     }
 
-    /* SVG default styles */
-    .cursor-indicator svg .cls-1,
-    .cursor-indicator svg .cls-2 {
-        fill: currentColor;
-        stroke: #fff;
-        transition: all 0.3s ease;
-    }
-
-    .cursor-indicator svg .cls-3 {
-        fill: none;
-        stroke: #fff;
-        stroke-linecap: round;
-        transition: all 0.3s ease;
-    }
-
-    /* SVG styles when hovering over text */
-    .cursor-indicator.over-text svg .cls-1,
-    .cursor-indicator.over-text svg .cls-2 {
-        fill: none;
-        stroke: #007bff;
-    }
-
-    .cursor-indicator.over-text svg .cls-3 {
-        stroke: #007bff;
+    .cursor-indicator.over-text .eye,
+    .cursor-indicator.over-text .mouth {
+        fill: #354093 !important; /* azul */
     }
 </style>

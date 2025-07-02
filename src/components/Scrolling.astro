@@ -4,7 +4,6 @@ import ArrowSvg from "@/assets/arrow-down.svg";
 ---
 
 <style>
-  /* Pega aquí el CSS de arriba */
   @keyframes bounce-vertical {
     0%, 100% {
       transform: translateY(0) scale(0.8);
@@ -28,7 +27,7 @@ import ArrowSvg from "@/assets/arrow-down.svg";
   }
 
   .arrow-btn {
-    width: 5rem;
+    width: 3rem;
     position: absolute;
     transition: transform 0.3s ease;
     animation-duration: 2s;
@@ -55,7 +54,7 @@ import ArrowSvg from "@/assets/arrow-down.svg";
   }
 
   .arrow-right {
-    transform: rotate(270deg);
+    transform: rotate(270deg) !important;
     right: 0;
     animation-name: bounce-horizontal;
   }

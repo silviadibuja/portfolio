@@ -1,1 +1,28 @@
-<svg id="Capa_1_copia" data-name="Capa 1 copia" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.97 45.97"><defs><style>.cls-1{fill:#364192;}.cls-1,.cls-3{stroke:#fff;stroke-miterlimit:10;}.cls-2{fill:#fff;}.cls-3{fill:none;stroke-linecap:round;}</style></defs><circle class="cls-1" cx="22.98" cy="22.98" r="22.48"/><ellipse class="cls-2" cx="16.91" cy="16.35" rx="3.16" ry="4.98"/><ellipse class="cls-2" cx="30.19" cy="16.35" rx="3.16" ry="4.98"/><path class="cls-3" d="M39.45,29.68c0,5.87-6.18,10.62-13.81,10.62S11.82,35.55,11.82,29.68" transform="translate(-2.09 -2.23)"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 46" width="150" height="150">
+  <!-- Cara -->
+  <circle class="face" cx="23" cy="23" r="22" />
+  
+  <!-- Ojos -->
+  <ellipse class="eye" cx="17" cy="16" rx="3" ry="5" />
+  <ellipse class="eye" cx="30" cy="16" rx="3" ry="5" />
+  
+  <!-- Boca smile: línea curva blanca, más fina, más baja y más ancha -->
+  <path class="mouth" d="M 12 32 Q 23 42 34 32" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <style>
+    .face {
+      fill: currentColor;
+      stroke: currentColor;
+      stroke-miterlimit: 10;
+      transition: all 0.3s ease;
+    }
+    .eye {
+      fill: #ffffff;
+      stroke: none;
+      transition: fill 0.3s ease;
+    }
+    .mouth {
+      transition: stroke 0.3s ease;
+    }
+  </style>
+</svg>

@@ -1,13 +1,12 @@
 ---
 import Scrolling from "@/components/Scrolling.astro";
 import BackgroundWaves from "./BackgroundWaves.astro";
-
 ---
 
 <style>
   .s2 .content {
     display: flex;
-    flex-direction: row; /* Mobile first: columna */
+    flex-direction: column; /* Mobile first: columna */
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -76,6 +75,7 @@ import BackgroundWaves from "./BackgroundWaves.astro";
       justify-content: center;
       overflow: hidden;
       gap: calc(1rem + 1vw);
+      flex-direction: row; /* Mobile first: columna */
     }
 
     .wrapper {
@@ -96,53 +96,44 @@ import BackgroundWaves from "./BackgroundWaves.astro";
         overflow: hidden;
         h3 {
           position: relative;
-          font-size: 3.5rem;
+          font-size: 2.7rem;
           top: 80px;
         }
       }
-
-
     }
 
-  .header-wrapper{
+    .header-wrapper {
       width: max-content;
     }
   }
 
   @media (min-width: 1800px) {
-  .s2 .content {
-    gap: 5rem;
+    .s2 .content {
+      gap: 2rem;
+    }
   }
-}
-
 </style>
 
 <section class="section s2">
-  <BackgroundWaves color="#dfdd19"/>
+  <BackgroundWaves color="#dfdd19" />
   <div class="content">
-    <div class="wrapper ilustracion">
-        <a href="/ilustracion" class="project-link">
-      
+    <a href="/ilustracion" class="wrapper ilustracion">
       <div class="header-wrapper">
         <h3>Ilustración digital</h3>
       </div>
-    </div>
-        </a>
+    </a>
 
-    <div class="wrapper ia">
-     
+    <a class="wrapper ia">
       <div class="header-wrapper">
         <h3>IA</h3>
       </div>
-    </div>
+    </a>
 
-    <div class="wrapper escenografia">
-  
+    <a class="wrapper escenografia">
       <div class="header-wrapper">
         <h3>Escenografía</h3>
       </div>
-    </div>
+    </a>
   </div>
-    <Scrolling direction="right" />
-
+  <Scrolling direction="right" />
 </section>
