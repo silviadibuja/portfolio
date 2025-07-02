@@ -128,7 +128,8 @@ button:focus {
 /* Gradientes profesionales con overlays */
 
 /* PRIMARY (amarillo) */
-.s1, .s4{
+.s1,
+.s4 {
   background-color: var(--color-primary);
   overflow: hidden;
 }
@@ -137,6 +138,7 @@ button:focus {
   background-color: var(--color-white-primary);
   overflow: hidden;
 }
+
 .s3 {
   background-color: var(--color-secondary);
 }
@@ -163,66 +165,50 @@ button:focus {
   cursor: pointer !important;
 }
 
- .gallery {
+/* .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(27.5rem, 1fr));
-    grid-auto-rows: 26.5rem;
+    grid-auto-rows: 22.5rem;
     gap: 0.75rem;
+    grid-auto-flow: dense;
   }
 
   .gallery figure {
-  /* container-type: inline-size; */
   container: figure / inline-size;
   overflow: hidden;
 
   display: grid;
-  /* grid-template-columns: 1fr; */
-  /* grid-template-rows: 1fr; */
 
-  /*
-    Because 1fr = minmax(auto, 1fr),
-    to prevent the grid blowout,
-    set the minimum to zero.
-  */
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: minmax(0, 1fr);
-}
-
-.gallery figure:nth-child(5) img, .gallery figure:nth-child(9) img {
-  object-fit: contain;
 }
 
 .gallery img {
   inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
-
-  /* grid-row: 1 / -1; */
-  /* grid-column: 1 / -1; */
   grid-area: 1 / 1 / -1 / -1;
 
   transition: scale 1s ease-in-out;
 }
 
 @media (width > 600px) {
-  .gallery figure:nth-child(1), .gallery figure:nth-child(6), .gallery figure:nth-child(9) {
+  .gallery-item.row-span-2 {
     grid-row: span 2;
   }
-.gallery figure:nth-child(2), .gallery figure:nth-child(5), .gallery figure:nth-child(12) {
-    grid-column: span 2;
-  }
-}
-
-/* @media (width > 600px) {
-  .gallery figure:nth-child(1) {
-    grid-area: span 2 / span 2;
-  }
-
-  .gallery figure:nth-child(4n + 1) {
-    grid-row: span 2;
-  }
-
-  .gallery figure:nth-child(4n + 2) {
+.gallery-item.column-span-2 {
     grid-column: span 2;
   }
 } */
+
+.gallery {
+  --gap: clamp(1rem, 5vmin, 2rem);
+  columns: 400px;
+  gap: var(--gap);
+  width: 100%;
+}
+
+.gallery>* {
+  break-inside: avoid;
+  margin-bottom: var(--gap);
+}

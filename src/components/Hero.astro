@@ -2,9 +2,34 @@
 import Scrolling from "@/components/Scrolling.astro";
 import Instagram from "@/assets/instagram.svg";
 import Linkedin from "@/assets/linkedin.svg";
+
+import CustomHero from "@/components/CustomHero.astro";
 ---
 
 <style>
+    .loading-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: var(--color-primary);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+    }
+    .loading-line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-secondary);
+        transform: scaleX(0);
+        transform-origin: center;
+        will-change: transform;
+        z-index: 100;
+        pointer-events: none;
+    }
     .text-container {
         text-align: center;
         position: relative;
@@ -12,11 +37,14 @@ import Linkedin from "@/assets/linkedin.svg";
     }
 
     .dibuja-text {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        gap: 1rem;
+        .dibuja-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            overflow: hidden;
+            clip-path: inset(0% 0% 100% 0%);
+        }
 
         span {
             pointer-events: none;
@@ -50,7 +78,7 @@ import Linkedin from "@/assets/linkedin.svg";
     .banner-link {
         position: absolute;
         display: grid;
-        right: 4.5rem;
+        right: 1rem;
         justify-items: center;
         row-gap: 0.5rem;
     }
@@ -60,7 +88,7 @@ import Linkedin from "@/assets/linkedin.svg";
         content: "";
         position: absolute;
         width: 12rem;
-        height: 1.5px;
+        height: 2px;
         transform: rotate(90deg);
         background: var(--color-secondary);
     }
@@ -78,9 +106,18 @@ import Linkedin from "@/assets/linkedin.svg";
         height: 2rem;
         cursor: pointer;
     }
+    @media (width > 600px) {
+        .banner-link {
+            right: 3.5rem;
+        }
+    }
 </style>
 
 <section class="section s1">
+    <div class="loading-overlay">
+        <div class="loading-line"></div>
+    </div>
+    <CustomHero />
     <div class="text-container">
         <div class="dibuja-text">
             <span class="s-letter">S</span>
@@ -88,13 +125,24 @@ import Linkedin from "@/assets/linkedin.svg";
         </div>
     </div>
     <div class="banner-link">
-        <a href="https://www.instagram.com/esedibuja/" target="_blank" rel="noreferrer noopener" title="Instagram">
+        <a
+            href="https://www.instagram.com/esedibuja/"
+            target="_blank"
+            rel="noreferrer noopener"
+            title="Instagram"
+        >
             <Instagram />
         </a>
 
-        <a href="https://www.linkedin.com/in/silviaromerohiguera/" target="_blank" rel="noreferrer noopener" title="Linkedin">
+        <a
+            href="https://www.linkedin.com/in/silviaromerohiguera/"
+            target="_blank"
+            rel="noreferrer noopener"
+            title="Linkedin"
+        >
             <Linkedin />
         </a>
     </div>
     <Scrolling direction="down" />
 </section>
+<script src="../scripts/customHero.js"></script>

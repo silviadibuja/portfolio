@@ -1,5 +1,11 @@
+---
+// Current page value (/home, /about, /404 ...)
+const currentPage =
+  Astro.url.pathname.replace(/\/$/, "").split("/").pop() || "home";
+---
+
 <!doctype html>
-<html lang="es">
+<html lang="es" data-page={currentPage}>
   <head>
     <meta charset="UTF-8" />
     <title>Sdibuja - Silvia Romero | Ilustradora gráfica</title>

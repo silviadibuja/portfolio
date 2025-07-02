@@ -1,8 +1,7 @@
 ---
-// components/BentoItem.astro
 const { src, alt, span } = Astro.props;
 ---
 
-<figure class="gallery-item">
+<figure class={`gallery-item ${span}`.trim()}>
     <img src={src} alt={alt} loading="lazy" class="gallery-item__image" />
 </figure>
