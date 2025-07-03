@@ -13,7 +13,8 @@ const stepMultipliers = [
   { x: 0, y: 0 },
   { x: 0, y: -1 }, 
   { x: -1, y: -1 }, 
-  { x: -1, y: -2 }   
+  { x: -1, y: -2 },
+  { x: -1, y: -3 }
 ];
 
 
@@ -56,6 +57,13 @@ function scrollTo(nextIndex) {
 // Evento de rueda del ratón
 function handleWheel(e) {
   const now = Date.now();
+
+ // ⚠️ NO hacer scroll general si estás dentro de .services
+  const services = document.getElementById("services");
+  if (services && services.contains(e.target)) {
+    return; // ignorar scroll global
+  }
+
   if (isScrolling || now - lastScrollTime < throttleDelay) return;
   lastScrollTime = now;
 
@@ -75,6 +83,14 @@ let touchStartY = 0;
 
 window.addEventListener("touchstart", (e) => {
   if (isScrolling) return;
+
+    // Prevención si tocas dentro de .services
+  const services = document.getElementById("services");
+  if (services && services.contains(e.target)) {
+    isScrolling = false; // desactiva scroll global
+    return;
+  }
+
   touchStartX = e.touches[0].clientX;
   touchStartY = e.touches[0].clientY;
 });

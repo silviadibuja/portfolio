@@ -2,6 +2,17 @@
 // Current page value (/home, /about, /404 ...)
 const currentPage =
   Astro.url.pathname.replace(/\/$/, "").split("/").pop() || "home";
+
+const allowScrollRoutes = [
+  "/ilustracion",
+  "/proyectos",
+  "/about",
+  "/contacto", // Agrega aquí todas las rutas que quieras permitir scroll
+];
+
+const allowScroll = allowScrollRoutes.some((route) =>
+  Astro.url.pathname.startsWith(route)
+);
 ---
 
 <!doctype html>
@@ -52,9 +63,8 @@ const currentPage =
       content="Portfolio profesional de Silvia Romero, ilustradora gráfica freelance."
     />
     <meta name="twitter:image" content="https://www.sdibuja.com/og-image.jpg" />
-
   </head>
-  <body>
+  <body class={allowScroll ? "body-scroll" : "body-blocked"}>
     <main>
       <slot />
     </main>
@@ -90,6 +100,21 @@ const currentPage =
         });
 
         lazyImages.forEach((img) => imageObserver.observe(img));
+      }
+
+      const allowScrollRoutes = [
+        "/ilustracion",
+        "/proyectos",
+        "/about",
+        "/contacto",
+      ];
+
+      const currentPath = window.location.pathname;
+
+      if (allowScrollRoutes.includes(currentPath)) {
+        document.body.style.overflow = "scroll";
+      } else {
+        document.body.style.overflow = "hidden";
       }
     </script>
   </body>

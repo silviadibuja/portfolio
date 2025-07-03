@@ -71,7 +71,7 @@ button:focus {
 .slider {
   position: relative;
   width: 300vw;
-  height: 300dvh;
+  height: 400dvh;
   overflow: hidden;
   will-change: transform;
   transition: transform 0.8s ease;
@@ -125,6 +125,11 @@ button:focus {
   left: 100vw;
 }
 
+.s5 {
+  top: 300dvh;
+  left: 100vw;
+}
+
 /* Gradientes profesionales con overlays */
 
 /* PRIMARY (amarillo) */
@@ -161,7 +166,6 @@ button:focus {
 .section-ilustracion {
   grid-column: main;
   padding: 1.25rem;
-  overflow: scroll !important;
   cursor: pointer !important;
 }
 

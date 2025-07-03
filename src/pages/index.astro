@@ -3,42 +3,25 @@ import Layout from "@/layouts/Layout.astro";
 import Hero from "@/components/Hero.astro";
 import Projects from "@/components/Projects.astro";
 import About from "@/components/About.astro";
+import Services from "@/components/Services.astro";
 import ContactForm from "@/components/ContactForm.astro";
 import Slider from "@/components/Slider.astro";
 
 import "@/assets/css/typography.css";
 import "@/assets/css/reset.css";
 import "@/assets/css/styles.css";
-
-// const isProduction = import.meta.env.MODE === "production";
-// const showMaintenance = import.meta.env.PUBLIC_SHOW_MAINTENANCE === "true";
-// const showMaintenanceInProduction = isProduction && showMaintenance;
-// console.log({ isProduction, showMaintenance });
-// console.log("hola");
 ---
 
 <Layout>
-  <!-- {
-    showMaintenanceInProduction ? (
-      <section class="maintenance">
-        <h1>🚧 Sitio en construcción 🚧</h1>
-        <p>
-          Estamos trabajando para traerte algo genial y maravilloso. Vuelve
-          pronto.
-        </p>
-      </section>
-    ) : (  -->
   <>
     <Slider>
       <Hero />
       <Projects />
       <About />
+      <Services />
       <ContactForm />
     </Slider>
     <script src="/scripts/index.js" defer></script>
     <script src="/scripts/customCursor.js" defer></script>
-   
   </>
-  <!-- )
-  }  -->
 </Layout>

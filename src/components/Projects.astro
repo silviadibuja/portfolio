@@ -24,6 +24,11 @@ import BackgroundWaves from "./BackgroundWaves.astro";
     display: flex;
     flex-direction: column;
     transition: all 200ms ease-in-out;
+    border-radius: 5px;
+    box-shadow:
+      5px 5px 30px 7px rgba(0, 0, 0, 0.25),
+      -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+    cursor: pointer;
 
     .image-wrapper {
       width: 100%;
@@ -68,6 +73,13 @@ import BackgroundWaves from "./BackgroundWaves.astro";
         transition: all 200ms ease-in-out;
       }
     }
+  }
+
+  .wrapper:hover {
+    transform: scale(0.9, 0.9);
+    box-shadow:
+      5px 5px 30px 15px rgba(0, 0, 0, 0.25),
+      -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
   }
 
   @media (min-width: 768px) {
