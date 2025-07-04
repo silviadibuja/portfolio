@@ -61,6 +61,13 @@ const { project } = Astro.props;
   .card-button:hover {
     background: rgba(0, 0, 0, 0.1);
   }
+
+  @media screen and (min-width: 48rem) {
+    .card {
+      width: 300px;
+      height: 300px;
+    }
+  }
 </style>
 
 <ul>

@@ -11,26 +11,22 @@ import ProjectCard from "./ProjectCard.astro";
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    justify-items: center;
+    gap: 1rem;
     width: 100%;
     height: 100%;
     overflow-y: auto;
-    gap: 1rem;
     z-index: 20;
   }
 
   @media (min-width: 48rem) {
     .s2 .projects-container {
       display: grid;
-      gap: 1.5rem;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: unset;
     }
   }
 
-  @media (min-width: 1800px) {
-    .s2 .projects-container {
-      gap: 2rem;
-    }
-  }
 </style>
 
 <section class="section s2">
