@@ -1,7 +1,6 @@
 ---
 import ProfileImage from "../../public/img/Silvia.png";
 import Waves from "./Waves.astro";
-import { aboutData } from "@/data/data" 
 ---
 
 <style>
@@ -48,7 +47,6 @@ import { aboutData } from "@/data/data"
 
             .about-container {
                 width: 70%;
-
             }
         }
 
@@ -70,47 +68,40 @@ import { aboutData } from "@/data/data"
         }
     }
 
-    .description {
-  position: relative;
-  overflow: hidden;
-  padding-right: 3rem;
-}
+    .slide {
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 
-.slide {
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+    .slide.active {
+        opacity: 1;
+        position: relative;
+    }
 
-.slide.active {
-  opacity: 1;
-  position: relative;
-}
+    .dots {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 
-.dots {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
+    .dot {
+        width: 10px;
+        height: 10px;
+        background-color: red;
+        border-radius: 50%;
+        transition: background-color 0.3s;
+    }
 
-.dot {
-  width: 10px;
-  height: 10px;
-  background-color: red;
-  border-radius: 50%;
-  transition: background-color 0.3s;
-}
-
-.dot.active {
-  background-color: green;
-}
-
+    .dot.active {
+        background-color: green;
+    }
 </style>
 
 <section class="section s3">
@@ -137,15 +128,12 @@ import { aboutData } from "@/data/data"
                     como herramienta creativa para explorar nuevas formas de
                     ilustración y animación.
                 </p>
-                <p>
+                <!-- <p>
                     En Sdibuja reúno mi universo creativo: ilustración, diseño y
                     narrativas visuales que buscarn emocionar, sorprender y
                     conectar.
-                </p>
+                </p> -->
             </div>
-
         </div>
     </div>
 </section>
-
-
