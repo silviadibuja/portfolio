@@ -49,9 +49,12 @@
 
 }
 
+html, body {
+  touch-action: none;
+}
+
 html {
   font-size: 16px;
-  /* 1rem = 16px */
 }
 
 body {
@@ -68,7 +71,7 @@ h2 {
 }
 
 h3 {
-  font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
+  font-size: clamp(1.75rem, 3vw + 0.5rem, 2.4rem);
 }
 
 h4 {

@@ -91,6 +91,7 @@ window.addEventListener("touchstart", (e) => {
     return;
   }
 
+  e.preventDefault();
   touchStartX = e.touches[0].clientX;
   touchStartY = e.touches[0].clientY;
 });
@@ -104,7 +105,7 @@ window.addEventListener("touchend", (e) => {
   const absX = Math.abs(deltaX);
   const absY = Math.abs(deltaY);
 
-  const swipeThreshold = 30; // Mueve a una constante para fácil ajuste
+  const swipeThreshold = 20; // Mueve a una constante para fácil ajuste
 
   if (absY > absX) { // Movimiento vertical dominante
     if (deltaY < -swipeThreshold) scrollTo(currentStep + 1); // Swipe hacia arriba (adelante)

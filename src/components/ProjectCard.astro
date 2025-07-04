@@ -1,0 +1,82 @@
+---
+// src/components/ProjectCard.astro
+const { project } = Astro.props;
+---
+
+<style>
+  /* src/styles/ProjectCard.css */
+  .card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: filter 0.3s ease;
+    width: 300px;
+    height: 300px;
+    background-color: var(--color-secondary);
+  }
+
+  .card:hover {
+    filter: contrast(1.1);
+  }
+
+  .card-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    padding: 1rem;
+    position: relative;
+  }
+
+  .card-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    z-index: -1;
+  }
+
+  .card-content {
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+
+  .card-content h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .card-button {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid #ccc;
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .card-button:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+<ul>
+  <li>
+    <article class="card">
+      <a href={`/${project.slug}`} class="card-link">
+        <img
+          src={project.image}
+          alt={project.title}
+          class="card-image"
+          loading="lazy"
+        />
+        <div class="card-content">
+          <h3>{project.title}</h3>
+        </div>
+      </a>
+    </article>
+  </li>
+</ul>

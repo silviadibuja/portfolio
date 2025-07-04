@@ -87,18 +87,18 @@ import CustomHero from "@/components/CustomHero.astro";
     .banner-link:after {
         content: "";
         position: absolute;
-        width: 12rem;
+        width: 7rem;
         height: 2px;
         transform: rotate(90deg);
         background: var(--color-secondary);
     }
 
     .banner-link:before {
-        top: -7rem;
+        top: -4.5rem;
     }
 
     .banner-link:after {
-        bottom: -7rem;
+        bottom: -4.5rem;
     }
 
     .banner-link svg {
@@ -106,9 +106,22 @@ import CustomHero from "@/components/CustomHero.astro";
         height: 2rem;
         cursor: pointer;
     }
-    @media (width > 600px) {
+    @media (width > 48rem) {
         .banner-link {
             right: 3.5rem;
+        }
+
+        .banner-link:before,
+        .banner-link:after {
+            width: 12rem;
+        }
+
+        .banner-link:before {
+            top: -7rem;
+        }
+
+        .banner-link:after {
+            bottom: -7rem;
         }
     }
 </style>

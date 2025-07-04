@@ -1,13 +1,13 @@
 ---
 import ProfileImage from "../../public/img/Silvia.png";
-import BackgroundWaves from "./BackgroundWaves.astro";
+import Waves from "./Waves.astro";
 import { aboutData } from "@/data/data";
 ---
 
 <style>
     .services-section {
         position: absolute;
-        top: 30%;
+        top: 10%;
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
@@ -52,10 +52,19 @@ import { aboutData } from "@/data/data";
 
     .services {
         position: relative;
-        height: 250px;
         overflow: hidden;
         padding-right: 3rem;
-        width: 60vw;
+    }
+
+    @media screen and (min-width: 48rem) {
+        .services {
+            height: 250px;
+            width: 60vw;
+        }
+
+        .services-section {
+            top: 30%;
+        }
     }
 
     .slide {
@@ -95,33 +104,29 @@ import { aboutData } from "@/data/data";
 </style>
 
 <section class="section s4">
-    <BackgroundWaves color="#354093" mirror={false} withBackground={true} />
 
     <div class="container services-section">
-            <h2>5 cosas sobre mí</h2>
-            <div class="services" id="services">
+        <h2>5 cosas sobre mí</h2>
+        <div class="services" id="services">
+            {
+                aboutData.map((texto, index) => (
+                    <div class="slide" class:list={index === 0 ? "active" : ""}>
+                        <p>{texto}</p>
+                    </div>
+                ))
+            }
+
+            <div class="dots">
                 {
-                    aboutData.map((texto, index) => (
-                        <div
-                            class="slide"
+                    aboutData.map((_, index) => (
+                        <span
+                            class="dot"
                             class:list={index === 0 ? "active" : ""}
-                        >
-                             <p>{texto}</p>                        
-                        </div>
+                        />
                     ))
                 }
-
-                <div class="dots">
-                    {
-                        aboutData.map((_, index) => (
-                            <span
-                                class="dot"
-                                class:list={index === 0 ? "active" : ""}
-                            />
-                        ))
-                    }
-                </div>
             </div>
+        </div>
     </div>
 </section>
 
@@ -205,4 +210,3 @@ import { aboutData } from "@/data/data";
     // 🚀 Iniciar slider automático
     autoSlideTimeout = setTimeout(autoAdvance, AUTO_SLIDE_INTERVAL);
 </script>
-

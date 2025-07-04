@@ -66,6 +66,7 @@ button:focus {
   height: 100dvh;
   overflow: hidden;
   position: relative;
+  touch-action: none;
 }
 
 .slider {
@@ -75,6 +76,7 @@ button:focus {
   overflow: hidden;
   will-change: transform;
   transition: transform 0.8s ease;
+  touch-action: none;
 }
 
 /* ----- CONTENEDOR ----- */
@@ -134,7 +136,7 @@ button:focus {
 
 /* PRIMARY (amarillo) */
 .s1,
-.s4 {
+.s5 {
   background-color: var(--color-primary);
   overflow: hidden;
 }
@@ -145,6 +147,10 @@ button:focus {
 }
 
 .s3 {
+  background-color: var(--color-secondary);
+}
+
+.s4 {
   background-color: var(--color-secondary);
 }
 

@@ -1,6 +1,6 @@
 ---
 import ProfileImage from "../../public/img/Silvia.png";
-import BackgroundWaves from "./BackgroundWaves.astro";
+import Waves from "./Waves.astro";
 import { aboutData } from "@/data/data" 
 ---
 
@@ -37,10 +37,6 @@ import { aboutData } from "@/data/data"
                 flex-direction: column;
                 align-items: baseline;
                 row-gap: 1.5rem;
-
-                p:last-child {
-                    display: none;
-                }
             }
         }
     }
@@ -53,11 +49,6 @@ import { aboutData } from "@/data/data"
             .about-container {
                 width: 70%;
 
-                .description {
-                    p:last-child {
-                        display: block;
-                    }
-                }
             }
         }
 
@@ -81,7 +72,6 @@ import { aboutData } from "@/data/data"
 
     .description {
   position: relative;
-  height: 200px; /* ajusta según diseño */
   overflow: hidden;
   padding-right: 3rem;
 }
@@ -124,7 +114,7 @@ import { aboutData } from "@/data/data"
 </style>
 
 <section class="section s3">
-    <BackgroundWaves color="#344293" mirror={true} withBackground={true} />
+    <Waves color="#344293" mirror={true} withBackground={true} />
 
     <div class="container about-section">
         <div class="about-img">
