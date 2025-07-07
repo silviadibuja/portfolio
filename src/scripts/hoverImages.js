@@ -11,3 +11,6 @@ export function HoverGifSwap() {
     img.addEventListener('touchend', () => img.src = staticSrc);
   });
 }
+
+document.addEventListener("DOMContentLoaded", HoverGifSwap);
+
