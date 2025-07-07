@@ -33,7 +33,7 @@ const { project } = Astro.props;
     height: auto;
     object-fit: cover;
     border-radius: 6px;
-    z-index: -1;
+    /* z-index: -1; */
   }
 
   .card-content {
@@ -73,11 +73,14 @@ const { project } = Astro.props;
     <article class="card">
       <a href={`/${project.slug}`} class="card-link">
         <img
-          src={project.image}
+          src={project.imageStatic}
           alt={project.title}
-          class="card-image"
+          class="card-image hover-gif"
           loading="lazy"
+          data-static={project.imageStatic}
+          data-gif={project.imageGif}
         />
+
         <div class="card-content">
           <h3>{project.title}</h3>
         </div>
@@ -85,3 +88,11 @@ const { project } = Astro.props;
     </article>
   </li>
 </ul>
+
+<script type="module" is:inline>
+  import { HoverGifSwap } from '/src/scripts/hoverImages.js';
+
+  document.addEventListener("DOMContentLoaded", HoverGifSwap);
+</script>
+
+
