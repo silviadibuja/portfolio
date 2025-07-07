@@ -79,16 +79,16 @@ export const projects = [
   {
     title: "Ilustración digital",
     slug: "ilustracion",
-    image: "/images/ilustracion.webp",
+    image: "/public/img/ilustracion.gif",
   },
   {
     title: "IA",
     slug: "ia",
-    image: "/images/ia.webp",
+    image: "/public/img/ia.gif",
   },
   {
     title: "Escenografía",
     slug: "escenografia",
-    image: "/images/escenografia.webp",
+    image: "/public/img/escenografia.gif",
   }
 ];
