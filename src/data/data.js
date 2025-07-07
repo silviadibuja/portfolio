@@ -80,19 +80,19 @@ export const projects = [
     title: "Ilustración digital",
     slug: "ilustracion",
     imageStatic: "/img/ilustracion.png",
-    imageGif: "/img/ilustracion.gif",
+    video: "/img/ilustracion.mp4",
   },
   {
     title: "IA",
     slug: "ia",
     imageStatic: "/img/ia.png",
-    imageGif: "/img/ia.gif",
+    video: "/img/ia.mp4",
   },
   {
     title: "Escenografía",
     slug: "escenografia",
     imageStatic: "/img/escenografia.png",
-    imageGif: "/img/escenografia.gif",
+    video: "/img/escenografia.mp4",
   },
 ];
 

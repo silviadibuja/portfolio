@@ -1,16 +1,32 @@
 // src/scripts/hoverImages.js
-export function HoverGifSwap() {
-  const imgs = document.querySelectorAll('.hover-gif');
-  imgs.forEach((img) => {
-    const staticSrc = img.dataset.static;
-    const gifSrc = img.dataset.gif;
+function setupHoverVideos() {
+  const cards = document.querySelectorAll(".card-media-wrapper");
 
-    img.addEventListener('mouseenter', () => img.src = gifSrc);
-    img.addEventListener('mouseleave', () => img.src = staticSrc);
-    img.addEventListener('touchstart', () => img.src = gifSrc);
-    img.addEventListener('touchend', () => img.src = staticSrc);
+  cards.forEach((wrapper) => {
+    const img = wrapper.querySelector('[data-type="image"]');
+    const video = wrapper.querySelector('[data-type="video"]');
+
+    const showVideo = () => {
+      img.style.display = "none";
+      video.style.display = "block";
+      video.currentTime = 0;
+      video.play();
+    };
+
+    const showImage = () => {
+      video.pause();
+      video.style.display = "none";
+      img.style.display = "block";
+    };
+
+    wrapper.addEventListener("mouseenter", showVideo);
+    wrapper.addEventListener("mouseleave", showImage);
+
+    // Para móvil
+    wrapper.addEventListener("touchstart", showVideo);
+    wrapper.addEventListener("touchend", showImage);
   });
 }
 
-document.addEventListener("DOMContentLoaded", HoverGifSwap);
+document.addEventListener("DOMContentLoaded", setupHoverVideos);
 
