@@ -1,5 +1,5 @@
 ---
-import ProfileImage from "../../public/img/Silvia.png";
+import ProfileImage from "../../public/img/ilustracion_silvia.png";
 import Waves from "./Waves.astro";
 ---
 
@@ -27,8 +27,8 @@ import Waves from "./Waves.astro";
             flex-direction: column;
             gap: 1rem;
 
-            .about-title {
-                margin-top: 0.5rem;
+            h2, h3, p {
+                color: var(--color-text);
             }
 
             .description {
@@ -43,10 +43,9 @@ import Waves from "./Waves.astro";
     @media screen and (min-width: 48rem) {
         .about-section {
             flex-direction: row;
-            align-items: self-end;
 
             .about-container {
-                width: 70%;
+                width: 40%;
             }
         }
 
@@ -105,9 +104,9 @@ import Waves from "./Waves.astro";
 </style>
 
 <section class="section s3">
-    <Waves color="#344293" mirror={true} withBackground={true} />
+    <Waves color="#eff3fa" mirror={true} withBackground={true} />
 
-    <div class="container about-section">
+    <div class="about-section">
         <div class="about-img">
             <picture>
                 <img src={ProfileImage.src} alt="Foto de perfil" srcset="" />
@@ -118,21 +117,13 @@ import Waves from "./Waves.astro";
                 <h2>Soy Silvia Romero</h2>
             </div>
             <div class="description">
-                <p>
+                <h3>
                     Ilustradora y escenógrafa con alma curiosa y manos
-                    inquietas. Me encanta dar vida a ideas a través del color,
-                    el trazo y la composición. Trabajo tanto en digital como en
-                    tradicional, combinando técnicas como acuarela, y dibujo a
-                    lápiz con herramientas digitales como Photoshop e
-                    Illustrator y también incorporo la inteligencia artificial
-                    como herramienta creativa para explorar nuevas formas de
-                    ilustración y animación.
+                    inquietas. 
+                </h3>
+                <p>
+                    Aquí te cuento 5 cosas que no sabías (pero deberías) sobre mí.
                 </p>
-                <!-- <p>
-                    En Sdibuja reúno mi universo creativo: ilustración, diseño y
-                    narrativas visuales que buscarn emocionar, sorprender y
-                    conectar.
-                </p> -->
             </div>
         </div>
     </div>

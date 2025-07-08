@@ -1,6 +1,5 @@
 ---
 import ProfileImage from "../../public/img/Silvia.png";
-import Waves from "./Waves.astro";
 import { aboutData } from "@/data/data";
 ---
 
@@ -11,6 +10,10 @@ import { aboutData } from "@/data/data";
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
+
+        h2, p {
+            color: var(--color-text);
+        }
 
         .about-img {
             width: 30%;
@@ -110,7 +113,7 @@ import { aboutData } from "@/data/data";
         <div class="services" id="services">
             {
                 aboutData.map((texto, index) => (
-                    <div class="slide" class:list={index === 0 ? "active" : ""}>
+                    <div class="slide" class:list={index === 0 ? 'active' : ''}>
                         <p>{texto}</p>
                     </div>
                 ))
