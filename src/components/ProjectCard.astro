@@ -13,6 +13,9 @@ const { project } = Astro.props;
     transition: filter 0.3s ease;
     width: 200px;
     height: 200px;
+
+     transform: translateY(0);
+  transition: transform 0.3s ease;
   }
 
   .card:hover {
@@ -78,6 +81,28 @@ const { project } = Astro.props;
     margin: 0;
     font-weight: 600;
   }
+  
+  .card.visible {
+  animation: floatCards 1.8s ease-out forwards;
+}
+
+@keyframes floatCards {
+   0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
   @media screen and (min-width: 48rem) {
     .card {

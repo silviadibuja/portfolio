@@ -1,7 +1,52 @@
 ---
-const { src, alt, span } = Astro.props;
+// src/components/IlustracionItem.astro
+const { src, alt, span = "", bg, text } = Astro.props;
 ---
 
 <figure class={`gallery-item ${span}`.trim()}>
-    <img src={src} alt={alt} loading="lazy" class="gallery-item__image" />
+  <img
+    src={src}
+    alt={alt}
+    loading="lazy"
+    class="gallery-item__image"
+  />
+  <figcaption class="gallery-item__overlay" style={`--overlay-bg: ${bg}`}>
+    <h4>{text}</h4>
+  </figcaption>
 </figure>
+
+<style>
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gallery-item__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .gallery-item__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: var(--overlay-bg, rgba(0, 0, 0, 0.6));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(10%);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .gallery-item:hover .gallery-item__overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

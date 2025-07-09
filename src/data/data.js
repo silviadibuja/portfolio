@@ -1,68 +1,81 @@
 export const ilustraciones = [
-
   {
     src: "/img/ilustraciones/ilustracion_4_web.png",
-    alt: "Ilustración con temática natural y colores vivos",
-    span: "row-span-2"
+    bg: "#e7ad40",
+    span: "row-span-2",
+    text: "Ilustración de microilustrados 7, pertenece al minicuento Cazando ratos"
   },
 
   {
     src: "/img/ilustraciones/amapola_web.jpg",
-    alt: "Ilustración abstracta con formas geométricas"
+    bg: "#ac2c09",
+    text: "Ilustración proyecto personal"
   },
   {
     src: "/img/ilustraciones/camiseta_patron_web.jpg",
-    alt: "Ilustración vectorial de paisaje"
+    bg: "#f8ef95",
+    text: "Patrón textil infantil"
   },
   {
     src: "/img/ilustraciones/ilustracion_2_web.jpg",
-    alt: "Ilustración con temática natural y colores vivos",
-    span: "column-span-2"
+    span: "column-span-2",
+    bg: "#59738e",
+    text: "Ilustración para novela gráfica sobre salud mental"
   },
   {
     src: "/img/ilustraciones/pelusilla_web.jpg",
-    alt: "Ilustración con temática natural y colores vivos",
-    span: "column-span-2"
+    span: "column-span-2",
+    bg: "#5a598e",
+    text: "Ilustración personaje para un cuento interactivo que habla sobre las estaciones del año y sus fenómenos atmosféricos"
   },
   {
     src: "/img/ilustraciones/Cartel_mansabora_web.jpg",
-    alt: "Escena artística en tonos cálidos",
-    span: "row-span-2"
+    span: "row-span-2",
+    bg: "#e2d0d0",
+    text: "Cartel para la Leyenda de la Mansaborá"
   },
   {
     src: "/img/ilustraciones/patron_web.jpg",
-    alt: "Ilustración con temática natural y colores vivos"
+    bg: "#b8d8ef",
+    text: "Patrón textil infantil"
   },
   {
     src: "/img/ilustraciones/gorro.png",
-    alt: "Ilustración con temática natural y colores vivos"
+    bg: "#c6c6c6",
+    text: "Patrón textil infantil"
   },
   {
     src: "/img/ilustraciones/cartel_web.jpg",
-    alt: "Ilustración de retrato digital",
-    span: "row-span-2"
+    bg: "#1f7df7",
+    span: "row-span-2",
+    text: "Cartel para las fiestas del Pilar"
   },
   {
     src: "/img/ilustraciones/marcapaginas_web.jpg",
-    alt: "Ilustración con temática natural y colores vivos"
+    bg: "#e2c87b",
+    text: "Ilustración para un marcapáginas, para Canal Empresarial"
   },
   {
     src: "/img/ilustraciones/taza_web.jpg",
-    alt: "Ilustración con temática natural y colores vivos"
+    bg: "#b5cebb",
+    text: "Ilustración proyecto personal"
   },
   {
     src: "/img/ilustraciones/gato_web.jpg",
-    alt: "Ilustración con temática natural y colores vivos"
+    bg: "#969ba1",
+    text: "Ilustración personalizada"
   },
   {
     src: "/img/ilustraciones/ilustracion_3_web.jpg",
-    alt: "Ilustración con temática natural y colores vivos",
-    span: "column-span-2"
+    span: "column-span-2",
+    bg: "#59738e",
+    text: "Ilustración para novela gráfica sobre salud mental"
 
   },
   {
     src: "/img/ilustraciones/ilustracion_web.jpg",
-    alt: "Ilustración con temática natural y colores vivos"
+    bg: "#59738e",
+    text: "Ilustración para novela gráfica sobre salud mental"
   },
 ];
 
