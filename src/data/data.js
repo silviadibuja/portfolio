@@ -80,11 +80,31 @@ export const ilustraciones = [
 ];
 
 export const aboutData = [
-  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
-  "d expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely pain",
-  "os et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. ",
-  "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+   {
+    id: "1",
+    title: "Escenografía + Ilustración = una mirada escénica",
+    description: "Estudié Escenografía en la RESAD, lo que me dio una forma muy visual y narrativa de entender los espacios, los personajes y las emociones. Esa mirada escénica está siempre presente en lo que ilustro."
+  },
+  {
+    id: "2",
+    title: "Del lápiz a la IA, pasando por rotus y pinceles.",
+    description: "Empecé a dibujar desde que aprendí a coger un lápiz. Me gusta la acuarela y los lápices de colores, y lo combino con lo digital. Incluso he incorporado la IA para generar ideas, y dar movimiento a esas ilustraciones."
+  },
+  {
+    id: "3",
+    title: "Diseño pensando en la historia (y en quién la va a ver)",
+    description: "Ya sea un cartel, una ilustración para un cuento, un personaje animado o una imagen para redes, busco que todo tenga sentido, coherencia y un guiño visual que lo haga especial."
+  },
+  {
+    id: "4",
+    title: "Creo con intención (no solo por estética)",
+    description: "Cada línea, cada color, cada decisión… tiene un porqué. Me gusta que lo que hago tenga fondo, no solo forma. Busco que las ideas conecten y comuniquen de verdad."
+  },
+  {
+    id: "5",
+    title: "¿Qué ofrezco? Imágenes que comunican con emoción",
+    description: "Ofrezco ilustración creativa, diseño escénico, personajes con carácter y piezas gráficas que cuentan cosas. Me involucro desde la idea hasta el acabado final."
+  }
 ];
 
 // src/data/projects.js

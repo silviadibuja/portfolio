@@ -1,214 +1,24 @@
 ---
-import { aboutData } from "@/data/data";
+import ServicesItem from "./ServicesItem.astro";
 ---
 
 <style>
     .services-section {
-        position: absolute;
-        top: 10%;
+        position: relative; /* mejor que absolute para permitir altura natural */
+        height: 60%; /* ocupa todo el espacio disponible */
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
-
-        h2, p {
-            color: var(--color-text);
-        }
-
-        .about-img {
-            width: 30%;
-
-            img {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-        }
-
-        .about-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-
-            .about-title {
-                margin-top: 0.5rem;
-            }
-
-            .services {
-                display: flex;
-                flex-direction: column;
-                align-items: baseline;
-                row-gap: 1.5rem;
-
-                p:last-child {
-                    display: none;
-                }
-            }
-        }
+        gap: 4.5rem;
     }
 
-    @media screen and (min-width: 64rem) {
-        .about-img {
-            margin-right: 5rem;
-        }
-    }
-
-    .services {
-        position: relative;
-        overflow: hidden;
-        padding-right: 3rem;
-    }
-
-    @media screen and (min-width: 48rem) {
-        .services {
-            height: 250px;
-            width: 60vw;
-        }
-
-        .services-section {
-            top: 30%;
-        }
-    }
-
-    .slide {
-        opacity: 0;
-        transition: opacity 0.6s ease;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    .slide.active {
-        opacity: 1;
-        position: relative;
-    }
-
-    .dots {
-        position: absolute;
-        right: 1rem;
-        top: 30%;
-        transform: translateY(-50%);
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .dot {
-        width: 10px;
-        height: 10px;
-        background-color: red;
-        border-radius: 50%;
-        transition: background-color 0.3s;
-    }
-
-    .dot.active {
-        background-color: green;
+    h2 {
+        color: var(--color-text);
     }
 </style>
 
 <section class="section s4">
-
     <div class="container services-section">
-        <h2>5 cosas sobre mí</h2>
-        <div class="services" id="services">
-            {
-                aboutData.map((texto, index) => (
-                    <div class="slide" class:list={index === 0 ? 'active' : ''}>
-                        <p>{texto}</p>
-                    </div>
-                ))
-            }
-
-            <div class="dots">
-                {
-                    aboutData.map((_, index) => (
-                        <span
-                            class="dot"
-                            class:list={index === 0 ? "active" : ""}
-                        />
-                    ))
-                }
-            </div>
-        </div>
+        <h2>Aquí te cuento 5 cosas que no sabías (pero deberías) sobre mí.</h2>
+        <ServicesItem />
     </div>
 </section>
-
-<script is:inline>
-    const services = document.getElementById("services");
-    const slides = services.querySelectorAll(".slide");
-    const dots = services.querySelectorAll(".dot");
-
-    let current = 0;
-    let DoingScroll = false;
-    let autoSlideTimeout;
-    let userInteracted = false;
-    const AUTO_SLIDE_INTERVAL = 5000; // 5 segundos
-
-    function showSlide(index) {
-        slides.forEach((s, i) => {
-            s.classList.toggle("active", i === index);
-            dots[i].classList.toggle("active", i === index);
-        });
-    }
-
-    function goToSlide(index) {
-        if (index < 0 || index >= slides.length) return;
-        current = index;
-        showSlide(current);
-        resetAutoSlide(); // reinicia el temporizador automático
-    }
-
-    function nextSlide() {
-        current = (current + 1) % slides.length;
-        showSlide(current);
-    }
-
-    function resetAutoSlide() {
-        clearTimeout(autoSlideTimeout);
-        userInteracted = true;
-        autoSlideTimeout = setTimeout(() => {
-            userInteracted = false;
-            autoAdvance();
-        }, AUTO_SLIDE_INTERVAL * 2); // espera más después de interacción
-    }
-
-    function autoAdvance() {
-        if (!userInteracted) {
-            nextSlide();
-        }
-        autoSlideTimeout = setTimeout(autoAdvance, AUTO_SLIDE_INTERVAL);
-    }
-
-    services.addEventListener(
-        "wheel",
-        (e) => {
-            e.preventDefault();
-
-            if (DoingScroll) return;
-
-            DoingScroll = true;
-            if (e.deltaY > 0 && current < slides.length - 1) {
-                current++;
-            } else if (e.deltaY < 0 && current > 0) {
-                current--;
-            }
-
-            showSlide(current);
-            resetAutoSlide();
-            setTimeout(() => (DoingScroll = false), 600);
-        },
-        { passive: false },
-    );
-
-    // 💡 CLICK EN LOS DOTS
-    dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-            goToSlide(index);
-        });
-    });
-
-    // 👁️ Mostrar la primera slide al cargar
-    showSlide(current);
-
-    // 🚀 Iniciar slider automático
-    autoSlideTimeout = setTimeout(autoAdvance, AUTO_SLIDE_INTERVAL);
-</script>
