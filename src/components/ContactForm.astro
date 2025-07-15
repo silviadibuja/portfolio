@@ -1,5 +1,6 @@
 ---
 import Waves from "./Waves.astro";
+import SocialLinks from "@/components/SocialLinks.astro";
 ---
 
 <style>
@@ -10,6 +11,10 @@ import Waves from "./Waves.astro";
     z-index: 20;
   }
 
+  .notMobile {
+    display: none;
+  }
+
   .contact-content {
     display: flex;
     flex-direction: column;
@@ -17,30 +22,28 @@ import Waves from "./Waves.astro";
     margin-right: 3rem;
     justify-content: space-evenly;
 
+    .contact-title {
+      color: var(--color-text);
+    }
+
     .contact-info {
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      p {
-        display: none;
-
-        &:last-child {
-          display: block;
-        }
-      }
     }
+  }
+
+  button {
+    background-color: var(--color-text);
   }
 
   @media screen and (min-width: 48rem) {
     .contact-container {
       flex-direction: row;
     }
-    .contact-content {
-      .contact-info {
-        p {
-          display: block;
-        }
-      }
+
+    .notMobile {
+      display: block;
     }
   }
 </style>
@@ -56,8 +59,8 @@ import Waves from "./Waves.astro";
       </div>
       <div class="contact-info">
         <p>¿Tienes una historia que pide a gritos color?</p>
-        <p>¿Un proyecto que quiere cobrar vida?</p>
-        <p>
+        <p class="notMobile">¿Un proyecto que quiere cobrar vida?</p>
+        <p class="notMobile">
           Cuéntamelo. Estoy al otro lado, con lápices afilados y muchas ganas de
           crear.
         </p>
@@ -72,9 +75,10 @@ import Waves from "./Waves.astro";
       <input type="email" id="email" name="email" required />
 
       <label for="mensaje">Mensaje:</label>
-      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+      <textarea id="mensaje" name="mensaje" rows="3" required></textarea>
 
       <button type="submit">Enviar</button>
     </form>
   </div>
+  <SocialLinks direction="horizontal" />
 </section>

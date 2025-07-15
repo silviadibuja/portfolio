@@ -1,0 +1,129 @@
+---
+import Instagram from "@/assets/instagram.svg";
+import Linkedin from "@/assets/linkedin.svg";
+
+const { direction = "vertical" } = Astro.props;
+---
+
+<style>
+    .social-links {
+        position: absolute;
+        display: grid;
+        justify-items: center;
+        gap: 0.5rem;
+    }
+
+    .social-links.vertical {
+        right: 1rem;
+        row-gap: 0.5rem;
+    }
+
+    .social-links.horizontal {
+        bottom: 1rem;
+        grid-auto-flow: column;
+        column-gap: 0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-links.vertical::before,
+    .social-links.vertical::after {
+        content: "";
+        position: absolute;
+        width: 7rem;
+        height: 2px;
+        transform: rotate(90deg);
+        background: var(--color-text);
+    }
+
+    .social-links.vertical::before {
+        top: -4.5rem;
+    }
+
+    .social-links.vertical::after {
+        bottom: -4.5rem;
+    }
+
+    .social-links.horizontal::before,
+    .social-links.horizontal::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 7rem;
+        background: var(--color-text);
+    }
+
+    .social-links.horizontal::before {
+        left: -8rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .social-links.horizontal::after {
+        right: -8rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .social-links svg {
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+    }
+
+    @media (width > 48rem) {
+        .social-links.vertical {
+            right: 3.5rem;
+        }
+
+        .social-links.vertical::before,
+        .social-links.vertical::after {
+            width: 12rem;
+        }
+
+        .social-links.vertical::before {
+            top: -7rem;
+        }
+
+        .social-links.vertical::after {
+            bottom: -7rem;
+        }
+
+        .social-links.horizontal {
+        bottom: 2.5rem;
+   
+    }
+
+        .social-links.horizontal::before,
+        .social-links.horizontal::after {
+            width: 12rem;
+        }
+
+        .social-links.horizontal::before {
+            left: -13rem;
+        }
+
+        .social-links.horizontal::after {
+            right: -13rem;
+        }
+    }
+</style>
+
+<div class={`social-links ${direction}`}>
+    <a
+        href="https://www.instagram.com/esedibuja/"
+        target="_blank"
+        rel="noreferrer noopener"
+        title="Instagram"
+    >
+        <Instagram />
+    </a>
+    <a
+        href="https://www.linkedin.com/in/silviaromerohiguera/"
+        target="_blank"
+        rel="noreferrer noopener"
+        title="Linkedin"
+    >
+        <Linkedin />
+    </a>
+</div>

@@ -1,9 +1,7 @@
 ---
 import Scrolling from "@/components/Scrolling.astro";
-import Instagram from "@/assets/instagram.svg";
-import Linkedin from "@/assets/linkedin.svg";
-
 import CustomHero from "@/components/CustomHero.astro";
+import SocialLinks from "@/components/SocialLinks.astro";
 ---
 
 <style>
@@ -75,55 +73,7 @@ import CustomHero from "@/components/CustomHero.astro";
         color: var(--color-text);
     }
 
-    .banner-link {
-        position: absolute;
-        display: grid;
-        right: 1rem;
-        justify-items: center;
-        row-gap: 0.5rem;
-    }
-
-    .banner-link:before,
-    .banner-link:after {
-        content: "";
-        position: absolute;
-        width: 7rem;
-        height: 2px;
-        transform: rotate(90deg);
-        background: var(--color-text);
-    }
-
-    .banner-link:before {
-        top: -4.5rem;
-    }
-
-    .banner-link:after {
-        bottom: -4.5rem;
-    }
-
-    .banner-link svg {
-        width: 2rem;
-        height: 2rem;
-        cursor: pointer;
-    }
-    @media (width > 48rem) {
-        .banner-link {
-            right: 3.5rem;
-        }
-
-        .banner-link:before,
-        .banner-link:after {
-            width: 12rem;
-        }
-
-        .banner-link:before {
-            top: -7rem;
-        }
-
-        .banner-link:after {
-            bottom: -7rem;
-        }
-    }
+    
 </style>
 
 <section class="section s1">
@@ -137,25 +87,7 @@ import CustomHero from "@/components/CustomHero.astro";
             <span class="dibuja-word">dibuja</span>
         </div>
     </div>
-    <div class="banner-link">
-        <a
-            href="https://www.instagram.com/esedibuja/"
-            target="_blank"
-            rel="noreferrer noopener"
-            title="Instagram"
-        >
-            <Instagram />
-        </a>
-
-        <a
-            href="https://www.linkedin.com/in/silviaromerohiguera/"
-            target="_blank"
-            rel="noreferrer noopener"
-            title="Linkedin"
-        >
-            <Linkedin />
-        </a>
-    </div>
+    <SocialLinks direction="vertical" />
     <Scrolling direction="down" />
 </section>
 <script src="../scripts/customHero.js"></script>

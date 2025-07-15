@@ -68,14 +68,13 @@ import { aboutData } from "@/data/data";
     background-color: var(--color-text);
   }
 
-
-     @media screen and (min-width: 48rem) {
-        .services {
-    height: 300px; /* ajusta altura según necesites */
-    width: 70%;
-  }
+  @media screen and (min-width: 48rem) {
+    .services {
+      height: 300px; /* ajusta altura según necesites */
+      width: 60%;
+      padding-right: 6rem;
     }
-
+  }
 </style>
 
 <div class="services" id="services">
@@ -94,15 +93,13 @@ import { aboutData } from "@/data/data";
   }
 
   <div class="dots" id="dots">
-  {
-    aboutData.map((_, index) => (
-      <span class={`dot ${index === 0 ? "active" : ""}`} data-index={index} />
-    ))
-  }
+    {
+      aboutData.map((_, index) => (
+        <span class={`dot ${index === 0 ? "active" : ""}`} data-index={index} />
+      ))
+    }
+  </div>
 </div>
-</div>
-
-
 
 <script>
   import { initZoomScroll } from "../scripts/ZoomScroll";
