@@ -1,34 +1,21 @@
 ---
 import { ilustraciones } from "@/data/data";
 import IlustracionItem from "@/components/IlustracionItem.astro";
+import ArrowBack from "@/components/ArrowBack.astro";
 import "@/assets/css/reset.css";
 import "@/assets/css/styles.css";
 import "@/assets/css/typography.css";
-import GoBack from "@/assets/go-back-arrow.svg";
 ---
 
 <style>
-  .go-back {
-    position: fixed;
-    top: 2rem;
-    left: 3rem;
-    z-index: 1;
-    cursor: pointer;
-  }
-  .go-back svg {
-    width: 2rem;
-    height: 2rem;
-    cursor: pointer;
-
+  .section-ilustracion {
+    background-color: var(--color-secondary);
   }
 </style>
 
+
 <section class="section-ilustracion">
-  <div class="go-back">
-    <a href="javascript:history.back()" aria-label="Volver atrás">
-      <GoBack />
-    </a>
-  </div>
+<ArrowBack />
   <div class="gallery">
     {ilustraciones.map((item) => <IlustracionItem {...item} />)}
   </div>

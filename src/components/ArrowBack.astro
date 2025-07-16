@@ -1,0 +1,24 @@
+---
+import GoBack from "@/assets/go-back-arrow.svg";
+---
+
+<style>
+    .go-back {
+        position: fixed;
+        top: 2rem;
+        left: 3rem;
+        z-index: 1;
+        cursor: pointer;
+    }
+    .go-back svg {
+        width: 4.5rem;
+        height: 4.5rem;
+        cursor: pointer;
+    }
+</style>
+
+<div class="go-back">
+    <a href="javascript:history.back()" aria-label="Volver atrás">
+        <GoBack />
+    </a>
+</div>

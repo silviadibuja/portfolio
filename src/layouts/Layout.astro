@@ -5,9 +5,8 @@ const currentPage =
 
 const allowScrollRoutes = [
   "/ilustracion",
-  "/proyectos",
-  "/about",
-  "/contacto", // Agrega aquí todas las rutas que quieras permitir scroll
+  "/ia",
+  "/escenografia"
 ];
 
 const allowScroll = allowScrollRoutes.some((route) =>
@@ -22,7 +21,7 @@ const allowScroll = allowScrollRoutes.some((route) =>
     <title>Sdibuja - Silvia Romero | Ilustradora gráfica</title>
 
     <!-- SEO básico -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta
       name="description"
       content="Portfolio profesional de Silvia Romero, ilustradora gráfica freelance especializada en ilustración digital, arte editorial y diseño visual."
@@ -113,17 +112,18 @@ const allowScroll = allowScrollRoutes.some((route) =>
 
       const allowScrollRoutes = [
         "/ilustracion",
-        "/proyectos",
-        "/about",
-        "/contacto",
+        "/ia",
+        "/escenografia"
       ];
 
       const currentPath = window.location.pathname;
 
       if (allowScrollRoutes.includes(currentPath)) {
         document.body.style.overflow = "scroll";
+        document.body.style.cursor = "pointer";
       } else {
         document.body.style.overflow = "hidden";
+        document.body.style.cursor = "none";
       }
     </script>
   </body>
