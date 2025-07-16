@@ -53,7 +53,7 @@ import ImageIA from "../../public/img/corto_web.jpg";
         font-size: 2.5rem;
     }
 
-    .content button {
+    #openVideo {
         margin-top: 1rem;
         padding: 0.75rem 4.5rem;
         background-color: var(--color-primary);
@@ -64,7 +64,7 @@ import ImageIA from "../../public/img/corto_web.jpg";
         font-size: 3rem;
     }
 
-    .content button:hover {
+    #openVideo:hover {
         background-color: var(--color-text);
         color: var(--color-white-primary);
     }
@@ -98,15 +98,22 @@ import ImageIA from "../../public/img/corto_web.jpg";
 
     .close-btn {
         position: absolute;
-        top: -2.5rem;
-        right: 0;
-        background: white;
-        color: black;
+        top: -1.5rem;
+        right: -1.5rem;
+        background: transparent;
+        color: white;
         border: none;
-        padding: 0.5rem 1rem;
-        cursor: pointer;
+        font-size: 2.5rem;
         font-weight: bold;
-        border-radius: 4px;
+        cursor: pointer;
+        line-height: 1;
+        z-index: 10000;
+        transition: transform 0.2s ease;
+    }
+
+    .close-btn:hover {
+        transform: scale(1.2);
+        color: var(--color-primary); /* O el color que prefieras */
     }
 
     .hidden {
@@ -177,7 +184,8 @@ import ImageIA from "../../public/img/corto_web.jpg";
                         allow="autoplay; fullscreen; picture-in-picture"
                         title="EL CLUB DE LOS INCREÍBLES"
                         allowfullscreen></iframe>
-                    <button class="close-btn">Cerrar</button>
+                    <button class="close-btn" aria-label="Cerrar modal">✕</button
+                    >
                 </div>
             </div>
             <button id="openVideo">Ver corto</button>
